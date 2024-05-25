@@ -3,11 +3,19 @@
 @tailwind utilities;
 
  
-.ant-btn .css-dev-only-do-not-override-n0gjrg .ant-btn-primary .ant-btn-lg .ant-input-search-button{
- background-color: red;
+ /* App.css */
+
+.custom-dropdown-menu {
+  background-color: #aa0000 !important;  /* Change the background color */
+  border-radius: 8px !important;  /* Add some border radius */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;  /* Add some shadow */
 }
 
-/* :where(.css-dev-only-do-not-override-n0gjrg).ant-btn-primary {
-     
-    @apply bg-red-400
-} */
+.custom-dropdown-menu-item {
+  color: #032749 !important;  /* Change the text color */
+  padding: 10px 20px !important;  /* Change the padding */
+}
+
+.custom-dropdown-menu-item:hover {
+  background-color: #195875 !important;  /* Change the hover background color */
+}
