@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ 
+.ant-btn .css-dev-only-do-not-override-n0gjrg .ant-btn-primary .ant-btn-lg .ant-input-search-button{
+ background-color: red;
+}
+
+/* :where(.css-dev-only-do-not-override-n0gjrg).ant-btn-primary {
+     
+    @apply bg-red-400
+} */
