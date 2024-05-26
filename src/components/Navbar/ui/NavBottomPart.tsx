@@ -13,6 +13,10 @@ import { BiGitCommit } from "react-icons/bi";
 import Dropdown from "@/components/Custom/Dropdown";
 import { countryDropdownitems } from "./CountryDropdown";
 import { SalesOfficeDropdownitems } from "./SalesOfficeDropdown";
+import FindVehicles from "./FindVehicles";
+import LiveAction from "./LiveAction";
+import Shipping from "./Shipping";
+import ServiceAndSupport from "./Service&Support";
 
 const NavBottomPart = () => {
   // essential dropdown state
@@ -21,31 +25,36 @@ const NavBottomPart = () => {
   const [isOpenShip, setOpenShip] = useState(false);
   const [isOpenSS, setOpenSS] = useState(false);
   const [isOpenE, setOpenE] = useState(false);
-  //   close all dropdown when mouse leave in the compoenet
-  const OnMouseLeave = () => {
-    setOpenFV(false);
-    setOpenLA(false);
-    setOpenShip(false);
-    setOpenSS(false);
-  };
+
   return (
     <div className="w-full flex items-center justify-between bg-gray-800   text-white px-3 py-2   md:text-xs lg:text-sm font-semibold ">
+      {/* Left section  */}
       <section className="flex items-center   ">
         <div className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300">
           <Link href={"/"}>How to Buy</Link>
         </div>
-        <div className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300">
-          <button
-            onMouseEnter={() => setOpenFV(true)}
-            className="flex items-center gap-1"
-          >
+        {/* find Vehicale */}
+        <div
+          // Find Vahicale
+          onMouseEnter={() => setOpenFV(true)}
+          onMouseLeave={() => setOpenFV(false)}
+          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300  relative"
+        >
+          <button className="flex items-center gap-1">
             Find Vehicles{" "}
             <span className="text-xs">
               {isOpenFV ? <AiFillCaretDown /> : <AiFillCaretUp />}
             </span>
           </button>
+          <div>{isOpenFV && <FindVehicles />}</div>
         </div>
-        <div className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300">
+
+        {/* Live Auctions */}
+        <div
+          onMouseEnter={() => setOpenLA(true)}
+          onMouseLeave={() => setOpenLA(false)}
+          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300  relative"
+        >
           <button
             onMouseEnter={() => setOpenLA(true)}
             className="flex items-center gap-1"
@@ -53,26 +62,37 @@ const NavBottomPart = () => {
             Live Auctions{" "}
             <span className="text-xs">
               {" "}
-              {isOpenFV ? <AiFillCaretDown /> : <AiFillCaretUp />}
+              {isOpenLA ? <AiFillCaretDown /> : <AiFillCaretUp />}
             </span>
+            <div>{isOpenLA && <LiveAction />}</div>
           </button>
         </div>
-        <div className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300">
-          <button
-            onMouseEnter={() => setOpenShip(true)}
-            className="flex items-center gap-1"
-          >
+        {/* Shipping */}
+        <div
+          onMouseEnter={() => setOpenShip(true)}
+          onMouseLeave={() => setOpenShip(false)}
+          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300  relative"
+        >
+          <button className="flex items-center gap-1">
             Shipping{" "}
             <span className="text-xs">
-              {isOpenFV ? <AiFillCaretDown /> : <AiFillCaretUp />}
+              {isOpenShip ? <AiFillCaretDown /> : <AiFillCaretUp />}
             </span>
           </button>
+          <div>{isOpenShip && <Shipping />}</div>
         </div>
+
+        {/* Vehicle history */}
         <div className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300">
           <Link href={"/"}>Vehicle History</Link>
         </div>
 
-        <div className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300">
+        {/* Service and Support  */}
+        <div
+          onMouseEnter={() => setOpenSS(true)}
+          onMouseLeave={() => setOpenSS(false)}
+          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300  relative"
+        >
           <button
             onMouseEnter={() => setOpenSS(true)}
             className="flex items-center gap-1"
@@ -82,9 +102,10 @@ const NavBottomPart = () => {
               {isOpenFV ? <AiFillCaretDown /> : <AiFillCaretUp />}
             </span>
           </button>
+          <div>{isOpenSS && <ServiceAndSupport />}</div>
         </div>
 
-        <div className="group text-orange-300 hover:text-white transition-colors duration-200">
+        <div className="group text-orange-300 hover:text-white transition-colors duration-200 ml-2">
           <Link href={"/"}>
             Cars in Stock{" "}
             <span className="group-hover:bg-white px-1 rounded-full bg-orange-300 text-black ">
@@ -94,6 +115,7 @@ const NavBottomPart = () => {
         </div>
       </section>
 
+      {/* Right section */}
       <section className="flex  ">
         {/* language dropdown */}
         <div className="border-r border-gray-300 px-4 relative">
