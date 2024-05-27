@@ -19,7 +19,7 @@ const NavSearchBar = () => {
   return (
     <div
       onMouseLeave={() => setOpen(false)}
-      className="relative xl:w-[800px] lg:w-[450px] md:w-[350px] w-full"
+      className="relative xl:w-[800px] lg:w-[450px] md:w-[350px] w-full z-50"
     >
       <form
         onSubmit={handleSearch}

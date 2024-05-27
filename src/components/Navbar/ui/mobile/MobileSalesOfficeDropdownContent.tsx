@@ -11,7 +11,7 @@ import nicaragua from "/public/assets/flag/nicaragua.png";
 import nigeria from "/public/assets/flag/nigeria.png";
 import poland from "/public/assets/flag/poland.png";
 import romania from "/public/assets/flag/romania.png";
-import { IDropdownOption } from "@/Interface/common";
+ 
 
 interface IOptionContent {
   text: string;
@@ -95,6 +95,7 @@ const countries: IOption[] = [
     },
   },
 ];
+
 const MobileSalesOfficeDropdownContent = () => {
   const [selectedCountry, setSelectedCountry] = useState<IOption>(countries[0]);
   const [isOpen, setIsOpen] = useState(false);

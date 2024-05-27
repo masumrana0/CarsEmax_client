@@ -8,19 +8,18 @@
  */
 
 "use client";
-import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 // import logo from "/public/assets/logo.jpg";
 import Link from "next/link";
 
 // icons
-import { GiHamburgerMenu } from "react-icons/gi";
 import { FaUser } from "react-icons/fa6";
-import { TfiHeadphoneAlt } from "react-icons/tfi";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
-import NavSearchBar from "./ui/NavSearchBar";
+import { TfiHeadphoneAlt } from "react-icons/tfi";
 import NavBottomPart from "./ui/NavBottomPart";
-import MobileDiviceToogleDropdown from "./ui/MobileDiviceToogleDropdown";
+import NavSearchBar from "./ui/NavSearchBar";
+import MobileDiviceToogleDropdown from "./ui/mobile/MobileDiviceToogleDropdown";
 
 const Navbar = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
@@ -30,9 +29,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo and Menu for Mobile divice */}
           <section className="flex items-center gap-3">
-            <div className=" md:hidden">
+            <div className=" md:hidden mt-1">
               <button
-                className="text-xl text-white "
+                className="text-2xl text-white  "
                 onClick={() => setMobileNavOpen(!isMobileNavOpen)}
               >
                 {isMobileNavOpen ? <RxCross1 /> : <GiHamburgerMenu />}
@@ -41,10 +40,12 @@ const Navbar = () => {
 
             {/* logo */}
             <div>
-              <Link href={"/"} className="text-white text-xl font-bold">
-                {/* <Image src={logo} width={100} height={50} alt="logo" /> */}
-                <span className="text-[#bfdcff]">Cars</span>
-                <span className="text-[#71e2c0]">EMax</span>
+              <Link href={"/"} className="text-white   font-bold">
+                <h2 className="flex items-center ">
+                  {/* <Image src={logo} width={100} height={50} alt="logo" /> */}
+                  <span className="text-[#bfdcff]">Cars</span>
+                  <span className="text-[#71e2c0]">EMax</span>
+                </h2>
               </Link>
             </div>
           </section>
@@ -126,7 +127,7 @@ const Navbar = () => {
 
       {/* Mobile divice Toogle Dropdown */}
       <section>
-        { true && (
+        {true && (
           <MobileDiviceToogleDropdown isMobileNavOpen={isMobileNavOpen} />
         )}
       </section>
