@@ -8,7 +8,7 @@ interface IOption {
   name: string;
 }
 
-const CountryDropdownContent = () => {
+export const CountryDropdownContent = () => {
   const countries: IOption[] = [
     { id: "1", name: "Afghanistan" },
     { id: "2", name: "Albania" },
@@ -123,7 +123,7 @@ const CountryDropdownContent = () => {
   };
 
   return (
-    <div className=" bg-gray-800 text-white pt-5">
+    <div className=" bg-gray-800 text-white md:pt-5 md:px-0 md:py-0  px-2 py-2">
       <select
         id="country"
         value={selectedcountry}

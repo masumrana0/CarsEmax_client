@@ -17,6 +17,7 @@ import FindVehicles from "./FindVehicles";
 import LiveAction from "./LiveAction";
 import Shipping from "./Shipping";
 import ServiceAndSupport from "./Service&Support";
+import More from "./More";
 
 const NavBottomPart = () => {
   // essential dropdown state
@@ -24,12 +25,12 @@ const NavBottomPart = () => {
   const [isOpenLA, setOpenLA] = useState(false);
   const [isOpenShip, setOpenShip] = useState(false);
   const [isOpenSS, setOpenSS] = useState(false);
-  const [isOpenE, setOpenE] = useState(false);
+  const [isOpenM, setOpenM] = useState(false);
 
   return (
-    <div className="w-full flex items-center justify-between bg-gray-800   text-white px-3 py-2   md:text-xs lg:text-sm font-semibold ">
+    <div className="w-full flex items-center  justify-between flex-col md:flex-row bg-gray-800   text-white px-3 py-2   md:text-xs lg:text-sm font-semibold ">
       {/* Left section  */}
-      <section className="flex items-center   ">
+      <section className="flex items-center  flex-col md:flex-row  text-left ">
         <div className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300">
           <Link href={"/"}>How to Buy</Link>
         </div>
@@ -53,7 +54,7 @@ const NavBottomPart = () => {
         <div
           onMouseEnter={() => setOpenLA(true)}
           onMouseLeave={() => setOpenLA(false)}
-          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300  relative"
+          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300  relative md:hidden lg:block"
         >
           <button
             onMouseEnter={() => setOpenLA(true)}
@@ -67,11 +68,12 @@ const NavBottomPart = () => {
             <div>{isOpenLA && <LiveAction />}</div>
           </button>
         </div>
+
         {/* Shipping */}
         <div
           onMouseEnter={() => setOpenShip(true)}
           onMouseLeave={() => setOpenShip(false)}
-          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300  relative"
+          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300  relative md:hidden lg:block"
         >
           <button className="flex items-center gap-1">
             Shipping{" "}
@@ -83,7 +85,7 @@ const NavBottomPart = () => {
         </div>
 
         {/* Vehicle history */}
-        <div className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300">
+        <div className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300 md:hidden lg:block">
           <Link href={"/"}>Vehicle History</Link>
         </div>
 
@@ -91,7 +93,7 @@ const NavBottomPart = () => {
         <div
           onMouseEnter={() => setOpenSS(true)}
           onMouseLeave={() => setOpenSS(false)}
-          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300  relative"
+          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300  relative md:hidden lg:block"
         >
           <button
             onMouseEnter={() => setOpenSS(true)}
@@ -105,7 +107,8 @@ const NavBottomPart = () => {
           <div>{isOpenSS && <ServiceAndSupport />}</div>
         </div>
 
-        <div className="group text-orange-300 hover:text-white transition-colors duration-200 ml-2">
+        {/* Car in Stock */}
+        <div className="group text-orange-300 hover:text-white transition-colors duration-200 ml-2 md:hidden lg:block">
           <Link href={"/"}>
             Cars in Stock{" "}
             <span className="group-hover:bg-white px-1 rounded-full bg-orange-300 text-black ">
@@ -113,12 +116,30 @@ const NavBottomPart = () => {
             </span>
           </Link>
         </div>
+
+        {/* More for Mobile Divice  */}
+        <div
+          onMouseEnter={() => setOpenM(true)}
+          onMouseLeave={() => setOpenM(false)}
+          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300 md:block lg:hidden  relative"
+        >
+          <button
+            onMouseEnter={() => setOpenSS(true)}
+            className="flex items-center gap-1"
+          >
+            More
+            <span className="text-xs">
+              {isOpenM ? <AiFillCaretDown /> : <AiFillCaretUp />}
+            </span>
+          </button>
+          <div>{isOpenM && <More />}</div>
+        </div>
       </section>
 
       {/* Right section */}
-      <section className="flex  ">
+      <section className="flex  flex-col md:flex-row ">
         {/* language dropdown */}
-        <div className="border-r border-gray-300 px-4 relative">
+        <div className="md:border-r border-gray-300 md:px-4 relative">
           <Dropdown
             optionStyle="hover:bg-gray-800"
             dropdownOverlay="bg-gray-800 w-[20rem]"
@@ -134,7 +155,7 @@ const NavBottomPart = () => {
         </div>
 
         {/* Location  */}
-        <div className="border-r border-gray-300 px-4">
+        <div className="md:border-r md:border-gray-300 md:px-4">
           <Dropdown
             dropdownOverlay="bg-gray-800 w-[20rem]"
             placement="middle"

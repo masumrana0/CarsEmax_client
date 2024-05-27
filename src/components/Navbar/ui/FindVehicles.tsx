@@ -11,7 +11,7 @@ import SearchByUsStateFV from "./SearchByUsStateFV";
 import SearchByCountryFV from "./SearchByCountryFV";
 
 const FindVehicles = () => {
-  const [state, setState] = useState(2);
+  const [state, setState] = useState(1);
   return (
     <div className="absolute left-0 top-7 flex   gap-5 bg-gray-900 text-white text-[14px] font-normal max-w-[800px]">
       {/* left side or navigator */}

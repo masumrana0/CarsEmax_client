@@ -59,7 +59,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       case "right":
         return `top-7 left-7  `;
       case "middle": // Adjust positioning for "middle"
-        return `top-7 right-[-7rem] `;
+        return `top-7  right-[-7rem] `;
       default:
         return `top-7 right-1 `;
     }

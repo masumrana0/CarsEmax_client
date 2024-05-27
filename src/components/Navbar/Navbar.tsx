@@ -20,12 +20,13 @@ import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { RxCross1 } from "react-icons/rx";
 import NavSearchBar from "./ui/NavSearchBar";
 import NavBottomPart from "./ui/NavBottomPart";
+import MobileDiviceToogleDropdown from "./ui/MobileDiviceToogleDropdown";
 
 const Navbar = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
   return (
-    <div>
-      <section className="bg-blue-700 px-3 md:px-8 py-2">
+    <div className="relative z-50">
+      <section className="bg-blue-700 px-3 md:px-8 py-2 z-50">
         <div className="flex items-center justify-between">
           {/* Logo and Menu for Mobile divice */}
           <section className="flex items-center gap-3">
@@ -121,6 +122,13 @@ const Navbar = () => {
       {/* destop nav Bottom part  */}
       <section className="hidden md:block">
         <NavBottomPart />
+      </section>
+
+      {/* Mobile divice Toogle Dropdown */}
+      <section>
+        { true && (
+          <MobileDiviceToogleDropdown isMobileNavOpen={isMobileNavOpen} />
+        )}
       </section>
     </div>
   );

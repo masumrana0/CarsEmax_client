@@ -8,7 +8,7 @@ interface LanguageOption {
   name: string;
 }
 
-const LanguageDropdownContent = () => {
+export const LanguageDropdownContent = () => {
   const languages: LanguageOption[] = [
     { id: "1", name: "English" },
     { id: "2", name: "Español" },
@@ -28,8 +28,8 @@ const LanguageDropdownContent = () => {
   };
 
   return (
-    <div className=" bg-gray-800 text-white">
-      <p>
+    <div className=" bg-gray-800 text-white px-2 py-3 md:px-0 md:py-0">
+      <p className="text-sm font-[300] md:font-semibold md:text-base ">
         CarsEMax is a global online car marketplace with an extensive inventory
         of 300,000+ vehicles. For a tailored browsing experience, select your
         preferred language.

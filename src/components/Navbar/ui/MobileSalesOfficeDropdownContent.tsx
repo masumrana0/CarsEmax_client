@@ -95,8 +95,7 @@ const countries: IOption[] = [
     },
   },
 ];
-
- const SalesOfficeDropdownContent = () => {
+const MobileSalesOfficeDropdownContent = () => {
   const [selectedCountry, setSelectedCountry] = useState<IOption>(countries[0]);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -112,7 +111,7 @@ const countries: IOption[] = [
         experience. This connects you directly to experts familiar with your
         local market when you reach out to our sales or support teams.
       </p>
-      <div className="relative" onMouseLeave={() => setIsOpen(false)}>
+      <div className="relative">
         <button
           className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-inherit border"
           onClick={() => setIsOpen(!isOpen)}
@@ -128,7 +127,7 @@ const countries: IOption[] = [
           </div>
         </button>
         {isOpen && (
-          <div className="absolute z-10  w-[19rem] rounded-md   shadow-lg bg-gray-800 h-[20rem] overflow-y-auto">
+          <div className="     w-full rounded-md   shadow-lg bg-gray-800 h-[20rem] overflow-y-auto">
             {countries.map((country) => (
               <div
                 key={country.id}
@@ -149,24 +148,8 @@ const countries: IOption[] = [
           </div>
         )}
       </div>
-      {/* <div className="mt-4">
-        <div className="flex items-center gap-3">
-          <Image
-            src={selectedCountry.content.flag}
-            width={30}
-            height={30}
-            alt="flag"
-          />
-          <p>{selectedCountry.content.text}</p>
-        </div>
-      </div> */}
     </div>
   );
 };
 
-export const SalesOfficeDropdownitems: IDropdownOption[] = [
-  {
-    key: "1",
-    label: <SalesOfficeDropdownContent />,
-  },
-];
+export default MobileSalesOfficeDropdownContent;
