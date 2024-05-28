@@ -27,7 +27,7 @@ const MobileDiviceToogleDropdown = ({
 
   return (
     <div
-      className={`w-[100vw]  relative  overflow-hidden transition-max-height duration-500 ease-in-out  bg-gray-800  transition-all   text-white  text-md font-semibold  ${
+      className={`w-[100vw]  relative  overflow-hidden transition-max-height duration-700 ease-in  bg-gray-800  transition-all   text-white  text-md font-semibold  ${
         isMobileNavOpen ? "max-h-[150vh]" : "max-h-0"
       }`}
     >

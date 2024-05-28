@@ -18,6 +18,7 @@ const NavSearchBar = () => {
 
   return (
     <div
+      // onBlur={() => setOpen(false)}
       onMouseLeave={() => setOpen(false)}
       className="relative xl:w-[800px] lg:w-[450px] md:w-[350px] w-full z-50"
     >
@@ -54,7 +55,7 @@ const NavSearchBar = () => {
       </form>
 
       {isOpen && (
-        <div className="absolute  w-full top-[2rem] md:top-[3rem]  md:w-[20rem]  bg-white gap-1  py-1 flex flex-col items-start rounded-b-lg overflow-hidden   ">
+        <div className="absolute  w-full top-[2rem] md:top-[40px]  md:w-[20rem]  bg-white gap-1  py-1 flex flex-col items-start rounded-b-lg overflow-hidden   ">
           <button
             type="button"
             onClick={() => setDropdownContent("All")}

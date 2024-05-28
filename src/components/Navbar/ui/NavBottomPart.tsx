@@ -1,15 +1,8 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-
-// icons
-import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
-import { GrLanguage, GrLocation } from "react-icons/gr";
-import { CiLocationOn } from "react-icons/ci";
-import { TfiHeadphoneAlt } from "react-icons/tfi";
-
+// components
 import { LanguageDropdownitems } from "./LanguageDropdown";
-import { BiGitCommit } from "react-icons/bi";
 import Dropdown from "@/components/Custom/Dropdown";
 import { countryDropdownitems } from "./CountryDropdown";
 import { SalesOfficeDropdownitems } from "./SalesOfficeDropdown";
@@ -18,6 +11,12 @@ import LiveAction from "./LiveAction";
 import Shipping from "./Shipping";
 import ServiceAndSupport from "./Service&Support";
 import More from "./More";
+
+// icons
+import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
+import { GrLanguage, GrLocation } from "react-icons/gr";
+import { CiLocationOn } from "react-icons/ci";
+import { TfiHeadphoneAlt } from "react-icons/tfi";
 
 const NavBottomPart = () => {
   // essential dropdown state
@@ -39,7 +38,7 @@ const NavBottomPart = () => {
           // Find Vahicale
           onMouseEnter={() => setOpenFV(true)}
           onMouseLeave={() => setOpenFV(false)}
-          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300  relative"
+          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300  relative max-w-full"
         >
           <button className="flex items-center gap-1">
             Find Vehicles{" "}
