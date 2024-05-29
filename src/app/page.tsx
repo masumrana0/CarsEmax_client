@@ -6,6 +6,7 @@ import { FaRegUser, FaSearch, FaShip } from "react-icons/fa";
 
 import Image from "next/image";
 import Regsiter from "@/components/forms/Regsiter";
+import PopularAuction from "@/components/home/PopularAuction";
 
 const countries = [
   { name: "United States", code: "US", dialCode: "+1", flag: "🇺🇸" },
@@ -24,6 +25,7 @@ const countries = [
 const HomePage = () => {
   return (
     <div>
+      {/* first section  */}
       <section className="bg-[#000180] flex items-center justify-between  gap-36 text-white md:px-5 py-5">
         <section className="w-full lg:w-1/2 px-3">
           <div>
@@ -92,6 +94,12 @@ const HomePage = () => {
             <Regsiter />
           </section>
         </div>
+      </section>
+
+      {/* second section  */}
+
+      <section className="mt-10 px-3">
+        <PopularAuction />
       </section>
     </div>
   );

@@ -107,7 +107,7 @@ const countries: IOption[] = [
 
   return (
     <div className="bg-gray-800 text-white py-2 px-2 md:px-0">
-      <p className="mb-4 font-[300] text-sm">
+      <p className="mb-4 font-[300] text-xs">
         Choose a country or region from the dropdown for a personalized
         experience. This connects you directly to experts familiar with your
         local market when you reach out to our sales or support teams.

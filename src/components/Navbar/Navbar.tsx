@@ -41,7 +41,7 @@ const Navbar = () => {
             {/* logo */}
             <div>
               <Link href={"/"} className="text-white   font-bold">
-                <h2 className="flex items-center ">
+                <h2 className="flex items-center text-xl ">
                   {/* <Image src={logo} width={100} height={50} alt="logo" /> */}
                   <span className="text-[#bfdcff]">Cars</span>
                   <span className="text-[#71e2c0]">EMax</span>
@@ -57,16 +57,20 @@ const Navbar = () => {
 
           {/* Account  */}
           <section className="md:flex items-center gap-1 lg:gap-5 hidden ">
-            <button className="flex items-center gap-2 hover:bg-blue-500 px-5 py-2 md:text-xs lg:text-lg rounded-full transition-colors duration-300">
-              <span className="p-1.5 bg-[#cdd9fd] text-[#2158f5] rounded-full">
-                <FaUser />
-              </span>
-              <span className="text-white font-bold">SIGN IN</span>
-            </button>
+            <Link href={"/login"}>
+              <button className="flex items-center gap-2 hover:bg-blue-500 px-5 py-2 md:text-xs lg:text-lg rounded-full transition-colors duration-300">
+                <span className="p-1.5 bg-[#cdd9fd] text-[#2158f5] rounded-full">
+                  <FaUser />
+                </span>
+                <span className="text-white font-bold">SIGN IN</span>
+              </button>
+            </Link>
 
-            <button className="py-2 px-5 md:text-xs lg:text-lg font-semibold bg-orange-400 hover:bg-orange-300  rounded-full transition-colors duration-300">
-              REGISTER NOW
-            </button>
+            <Link href={'/register'}>
+              <button className="py-3 px-4 md:text-xs lg:text-[17px] font-semibold bg-orange-400 hover:bg-orange-300  rounded-full transition-colors duration-300">
+                REGISTER NOW
+              </button>
+            </Link>
           </section>
 
           {/* for Mobile divice */}

@@ -29,7 +29,7 @@ export const LanguageDropdownContent = () => {
 
   return (
     <div className=" bg-gray-800 text-white px-2 py-3 md:px-0 md:py-0">
-      <p className="text-sm font-[300] md:font-semibold md:text-base ">
+      <p className="text-xs font-[300]     ">
         CarsEMax is a global online car marketplace with an extensive inventory
         of 300,000+ vehicles. For a tailored browsing experience, select your
         preferred language.

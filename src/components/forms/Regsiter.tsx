@@ -133,7 +133,7 @@ const Regsiter = () => {
   const [isOpen, setOpen] = useState<boolean>(false);
 
   return (
-    <div className="py-1 px-5">
+    <div className="py-3 px-5 bg-white">
       <h3 className="text-2xl text-center ">Register New Account for Free!</h3>
       {/* Login with google apple faebook */}
       <div className="flex  justify-center items-center gap-3 mt-5">
@@ -288,7 +288,7 @@ const Regsiter = () => {
 
         <p className="text-center mt-2 text-sm">
           Already a memeber?{" "}
-          <Link className=" hover:underline text-blue-500" href={"/"}>
+          <Link className=" hover:underline text-blue-500" href={"/login"}>
             SIGN IN
           </Link>
         </p>

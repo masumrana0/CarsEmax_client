@@ -93,7 +93,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             {arrow && (
               <div
                 className={cn(
-                  `w-3 h-3 border-t border-l  bg-slate-50   transform rotate-45 absolute top-[-7px]  bg-inherit ${
+                  `w-3 h-3 border-t border-l  bg-gray-900   transform rotate-45 absolute top-[-7px]  bg-inherit ${
                     placement === "middle" ? "left-[50%]" : "right-3"
                   } z-0`
                 )}
