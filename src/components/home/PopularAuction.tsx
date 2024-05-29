@@ -11,22 +11,22 @@ const PopularAuction = () => {
       <h3 className="font-bold text-xl md:text-3xl lg:text-4xl text-gray-800">
         Popular Auction Vehicles in Bangladesh
       </h3>
-      {/* button */}
+      {/* buttons */}
       <div className="my-5 flex items-center  gap-3 ">
         <button
-          className={`border border-gray-300 rounded lg:px-4 px-3 py-2 text-sm hover:bg-blue-300 hover:text-blue-600`}
+          className={`border border-gray-300 rounded lg:px-4 px-3 py-2 text-sm  hover:border-blue-500 hover:text-blue-600`}
         >
           Popular
         </button>
         <button
-          className={`border border-gray-300 rounded lg:px-4 px-3 py-2 text-sm hover:bg-blue-300 hover:text-blue-600`}
+          className={`border border-gray-300 rounded lg:px-4 px-3 py-2 text-sm hover:border-blue-500 hover:text-blue-600`}
         >
           Buy It Now
         </button>
         <button
           onClick={() => setClean(!isClean)}
-          className={`border border-gray-300 rounded lg:px-4 px-3 py-2 text-sm hover:bg-blue-300 hover:text-blue-600 ${
-            !isClean && "bg-blue-300"
+          className={`border border-gray-300 rounded lg:px-4 px-3 py-2 text-sm hover:border-blue-500 hover:text-blue-600 ${
+            isClean && "bg-blue-300 text-blue-600"
           }`}
         >
           Clean Titles

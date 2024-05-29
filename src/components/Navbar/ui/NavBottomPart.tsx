@@ -27,7 +27,7 @@ const NavBottomPart = () => {
   const [isOpenM, setOpenM] = useState(false);
 
   return (
-    <div className="w-full flex items-center  justify-between flex-col md:flex-row bg-gray-800   text-white px-3 py-2   md:text-xs lg:text-sm font-semibold ">
+    <div className="w-full flex items-center  justify-between flex-col md:flex-row bg-gray-800   text-white px-3 md:px-8 lg:px-10 py-2   md:text-xs lg:text-sm font-semibold ">
       {/* Left section  */}
       <section className="flex items-center  flex-col md:flex-row  text-left ">
         <div className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300">
@@ -38,7 +38,7 @@ const NavBottomPart = () => {
           // Find Vahicale
           onMouseEnter={() => setOpenFV(true)}
           onMouseLeave={() => setOpenFV(false)}
-          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300  relative max-w-full"
+          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300  relative  "
         >
           <button className="flex items-center gap-1">
             Find Vehicles{" "}

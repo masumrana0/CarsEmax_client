@@ -25,7 +25,7 @@ const Navbar = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
   return (
     <div className="relative z-50">
-      <section className="bg-blue-700 px-3 md:px-8 py-2 z-50">
+      <section className="bg-blue-700 px-3 md:px-8 lg:px-12 py-2 z-50">
         <div className="flex items-center justify-between">
           {/* Logo and Menu for Mobile divice */}
           <section className="flex items-center gap-3">

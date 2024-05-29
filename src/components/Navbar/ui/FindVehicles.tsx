@@ -13,9 +13,9 @@ import SearchByCountryFV from "./SearchByCountryFV";
 const FindVehicles = () => {
   const [state, setState] = useState(1);
   return (
-    <div className="absolute left-0 top-7 flex   gap-5 bg-gray-900 text-white text-[14px] font-normal max-w-[800px]">
+    <div className="absolute    left-0 top-7 flex   gap-5 bg-gray-900 text-white text-[14px] font-normal max-w-[800px]">
       {/* left side or navigator */}
-      <section>
+      <section className="relative h-full">
         <div className="w-[250px]   bg-gray-800 mt-3 ">
           <button
             onMouseEnter={() => setState(1)}
@@ -92,7 +92,7 @@ const FindVehicles = () => {
         </div>
       </section>
       {/* right side or Navigator content */}
-      <section className="px-3 py-5 max-h-[400px] relative ">
+      <section className="px-3 py-5 max-h-[400px] relative  inline-block">
         {state == 1 && <FeaturedItemsFV />}
         {state == 2 && <PopularMakesItemFV />}
         {state == 3 && <VehicaleTypeFV />}

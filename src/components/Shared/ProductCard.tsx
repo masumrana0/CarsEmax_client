@@ -7,7 +7,7 @@ import { FaClock, FaRegHeart } from "react-icons/fa6";
 
 const ProductCard: React.FC<{ product: IProduct; isClean?: boolean }> = ({
   product,
-  isClean = false,
+  isClean,
 }) => {
   const [isFevorite, setFevorite] = useState(false);
   return (
@@ -54,7 +54,7 @@ const ProductCard: React.FC<{ product: IProduct; isClean?: boolean }> = ({
               {product.finalBidAtAuction} USD
             </span>
           </button>
-          {isClean && (
+          {!isClean && (
             <button className="text-white bg-green-700 hover:bg-green-600 flex-grow py-1">
               Buy It Now
               <span className="block font-bold text-lg">

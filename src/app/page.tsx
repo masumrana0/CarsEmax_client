@@ -1,32 +1,27 @@
+/**
+ * Title: 'Home Ui develop By Masum Rana'
+ * Description: ''
+ * Author: 'Masum Rana'
+ * Email:'masum.rana6267@gmail.com'
+ * Date: 29-05-2024
+ *
+ */
+
 "use client";
 import React, { useState } from "react";
 
 // icons
 import { FaRegUser, FaSearch, FaShip } from "react-icons/fa";
 
-import Image from "next/image";
 import Regsiter from "@/components/forms/Regsiter";
 import PopularAuction from "@/components/home/PopularAuction";
-
-const countries = [
-  { name: "United States", code: "US", dialCode: "+1", flag: "🇺🇸" },
-  { name: "Bulgaria", code: "BG", dialCode: "+359", flag: "🇧🇬" },
-  { name: "El Salvador", code: "SV", dialCode: "+503", flag: "🇸🇻" },
-  { name: "Georgia", code: "GE", dialCode: "+995", flag: "🇬🇪" },
-  { name: "Ghana", code: "GH", dialCode: "+233", flag: "🇬🇭" },
-  { name: "Guatemala", code: "GT", dialCode: "+502", flag: "🇬🇹" },
-  { name: "Nicaragua", code: "NI", dialCode: "+505", flag: "🇳🇮" },
-  { name: "Nigeria", code: "NG", dialCode: "+234", flag: "🇳🇬" },
-  { name: "Poland", code: "PL", dialCode: "+48", flag: "🇵🇱" },
-  { name: "Romania", code: "RO", dialCode: "+40", flag: "🇷🇴" },
-  { name: "Ukraine", code: "UA", dialCode: "+380", flag: "🇺🇦" },
-];
+import ViewFullSalvage from "@/components/home/ViewFullSalvage";
 
 const HomePage = () => {
   return (
     <div>
       {/* first section  */}
-      <section className="bg-[#000180] flex items-center justify-between  gap-36 text-white md:px-5 py-5">
+      <section className="bg-[#000180] flex items-center justify-between  gap-36 text-white px-3 md:px-8 lg:px-10 py-5">
         <section className="w-full lg:w-1/2 px-3">
           <div>
             <h2 className="text-2xl lg:text-4xl  text-center lg:text-left font-bold py-5    ">
@@ -98,8 +93,15 @@ const HomePage = () => {
 
       {/* second section  */}
 
-      <section className="mt-10 px-3">
+      <section className="mt-10 px-3 md:px-8 lg:px-10">
         <PopularAuction />
+      </section>
+
+      {/* Third Section  */}
+      <section className="bg-gray-100">
+        <div className="mt-10 py-10 px-5 md:px-8 lg:px-10">
+          <ViewFullSalvage />
+        </div>
       </section>
     </div>
   );
