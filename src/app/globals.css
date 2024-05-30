@@ -5,17 +5,4 @@
  
  /* App.css */
 
-.custom-dropdown-menu {
-  background-color: #aa0000 !important;  /* Change the background color */
-  border-radius: 8px !important;  /* Add some border radius */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;  /* Add some shadow */
-}
-
-.custom-dropdown-menu-item {
-  color: #032749 !important;  /* Change the text color */
-  padding: 10px 20px !important;  /* Change the padding */
-}
-
-.custom-dropdown-menu-item:hover {
-  background-color: #195875 !important;  /* Change the hover background color */
-}
+ 

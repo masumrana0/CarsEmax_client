@@ -12,11 +12,34 @@ import React, { useState } from "react";
 
 // icons
 import { FaRegUser, FaSearch, FaShip } from "react-icons/fa";
+import { TfiArrowRight } from "react-icons/tfi";
 
 import Regsiter from "@/components/forms/Regsiter";
 import PopularAuction from "@/components/home/PopularAuction";
 import ViewFullSalvage from "@/components/home/ViewFullSalvage";
 
+import {
+  FiUser,
+  FiSearch,
+  FiDollarSign,
+  FiTruck,
+  FiMapPin,
+  FiCheckCircle,
+} from "react-icons/fi"; // Example icons, replace with actual ones if needed
+import { FaUser } from "react-icons/fa6";
+
+const Arrow = () => (
+  <div className="flex items-center">
+    <div className="w-40 h-0.5 bg-blue-500"></div>
+    <div className="relative flex items-center -ml-6">
+      <div className="w-5 h-5 bg-transparent border-t-2 border-r-2 border-blue-500 transform rotate-45"></div>
+    </div>
+  </div>
+);
+
+import Image from "next/image";
+import BenefitsOfChoosing from "@/components/home/BenefitsOfChoosing";
+import PaymentCalculator from "@/components/home/PaymentCalculator";
 const HomePage = () => {
   return (
     <div>
@@ -102,6 +125,50 @@ const HomePage = () => {
         <div className="mt-10 py-10 px-5 md:px-8 lg:px-10">
           <ViewFullSalvage />
         </div>
+      </section>
+
+      {/* Fourth Section */}
+      {/* <section className="w-full  px-3 md:px-8 lg:px-10 flex items-center">
+        <div className="flex items-center">
+          <div className="flex items-center gap-3">
+            <div className="flex gap-2 top-5">
+              <div className="absolute">
+                <span className="bg-gray-100 text-blue-600 p-3 rounded-full block w-10 h-10">
+                  <FaUser />
+                </span>
+                <h2>Register with Us</h2>
+              </div>
+              <div>
+                <h2 className="font-bold text-white py-1 px-6 bg-blue-500 w-[6rem]    text-nowrap rounded-full text-center">
+                  DAY 1
+                </h2>
+              </div>
+              <Arrow />
+            </div>
+            <div className="flex gap-2">
+              <div>
+                <h2 className="font-bold text-white py-1 px-6 bg-blue-500 w-[6rem]    text-nowrap rounded-full text-center">
+                  DAY 1
+                </h2>
+              </div>
+              <Arrow />
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* Fifth section */}
+      <section className="bg-gray-100">
+        <section className="mt-20 px-3 md:px-8 lg:px-10">
+          <BenefitsOfChoosing />
+        </section>
+      </section>
+
+      {/* Sixth section  */}
+      <section className="bg-[#004979]">
+        <section className="mt-20 px-3 md:px-8 lg:px-10">
+          <PaymentCalculator />
+        </section>
       </section>
     </div>
   );

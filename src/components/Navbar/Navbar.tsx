@@ -20,6 +20,7 @@ import { TfiHeadphoneAlt } from "react-icons/tfi";
 import NavBottomPart from "./ui/NavBottomPart";
 import NavSearchBar from "./ui/NavSearchBar";
 import MobileDiviceToogleDropdown from "./ui/mobile/MobileDiviceToogleDropdown";
+import RegisterBtn from "./ui/RegisterBtn";
 
 const Navbar = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
@@ -66,11 +67,7 @@ const Navbar = () => {
               </button>
             </Link>
 
-            <Link href={'/register'}>
-              <button className="py-3 px-4 md:text-xs lg:text-[17px] font-semibold bg-orange-400 hover:bg-orange-300  rounded-full transition-colors duration-300">
-                REGISTER NOW
-              </button>
-            </Link>
+            <RegisterBtn />
           </section>
 
           {/* for Mobile divice */}
@@ -131,9 +128,7 @@ const Navbar = () => {
 
       {/* Mobile divice Toogle Dropdown */}
       <section>
-        {true && (
-          <MobileDiviceToogleDropdown isMobileNavOpen={isMobileNavOpen} />
-        )}
+        <MobileDiviceToogleDropdown isMobileNavOpen={isMobileNavOpen} />
       </section>
     </div>
   );
