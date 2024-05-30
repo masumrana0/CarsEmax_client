@@ -40,6 +40,7 @@ const Arrow = () => (
 import Image from "next/image";
 import BenefitsOfChoosing from "@/components/home/BenefitsOfChoosing";
 import PaymentCalculator from "@/components/home/PaymentCalculator";
+import BreakdownVehicle from "@/components/home/BreakdownVehicle";
 const HomePage = () => {
   return (
     <div>
@@ -169,6 +170,13 @@ const HomePage = () => {
         <section className="mt-20 px-3 md:px-8 lg:px-10">
           <PaymentCalculator />
         </section>
+      </section>
+
+      {/* Seventh Section */}
+      <section>
+        <div className="mt-20 px-3 md:pl-8 lg:pl-10">
+          <BreakdownVehicle />
+        </div>
       </section>
     </div>
   );
