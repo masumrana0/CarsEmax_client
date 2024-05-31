@@ -36,7 +36,7 @@ const PaymentCalculator = () => {
   };
 
   return (
-    <div className="lg:mx-56">
+    <div className="xl:mx-56">
       <div className="py-10 container mx-auto  ">
         <div className="text-white text-center  ">
           <h2 className="  text-xl lg:text-3xl font-bold mb-2 mt-8">
@@ -84,10 +84,10 @@ const PaymentCalculator = () => {
 
         <div className="w-full flex flex-col md:flex-row   border-white border-2 rounded mt-5 overflow-hidden">
           {/* left section  */}
-          <section className="md:w-1/2  w-full bg-white p-2 md:p-4 lg:p-10 md:space-y-4 space-y-2  text-lg lg:text-xl">
+          <section className="md:w-1/2  w-full bg-white p-2 md:p-4 lg:p-10 md:space-y-4 space-y-2   text-xs md:text-md xl:text-lg ">
             {/* Lot or VIN */}
             <div className="flex md:items-center justify-between md:flex-row flex-col">
-              <h3 className="text-nowrap mb-2  md:mb-0 ">Lot# or VIN</h3>
+              <h3 className="text-nowrap mb-2   md:mb-0 ">Lot# or VIN</h3>
               <input
                 className="md:w-[70%] w-full  p-3 md:p-4  rounded  outline-none border  focus:red-200  hover:bg-gray-200"
                 placeholder="Enter Lot # or VIN "
@@ -179,12 +179,12 @@ const PaymentCalculator = () => {
             >
               <div className="lg:px-5 px-2 pt-2 lg:pt-5">
                 {/* section title  */}
-                <h2 className="font-bold  lg:text-xl  pb-2 my-2 text-white border-b-[0.5px] border-green-900">
+                <h2 className="font-bold   lg:text-xl  pb-2 my-2 text-white border-b-[0.5px] border-green-900">
                   SHIPPING ORDER
                 </h2>
                 {/* Shiiping INfo */}
                 <div>
-                  <div className=" w-full flex items-center justify-between text-sm md:text-md lg:text-xl py-2  border-b-[0.5px] border-green-900">
+                  <div className=" w-full flex items-center justify-between text-sm md:text-md  xl:text-lg py-2  border-b-[0.5px] border-green-900">
                     <p className=" flex items-center ">
                       Shipping to New Jersey, Nj (1 -3 days){" "}
                       <Tooltip
@@ -208,7 +208,7 @@ const PaymentCalculator = () => {
                     </h3>
                   </div>
 
-                  <div className="w-full flex items-center justify-between text-sm md:text-md lg:text-xl py-2 border-b-[0.5px] border-green-900  ">
+                  <div className="w-full flex items-center justify-between text-sm md:text-md xl:text-lg py-2 border-b-[0.5px] border-green-900  ">
                     <p className=" flex items-center">
                       Shipping to Luanda, AO (16-22 days)
                       <Tooltip
@@ -232,7 +232,7 @@ const PaymentCalculator = () => {
                     </h3>
                   </div>
 
-                  <div className="w-full flex items-center justify-between py-2 text-sm md:text-md lg:text-xl border-b-[0.5px] border-green-900  ">
+                  <div className="w-full flex items-center justify-between py-2 text-sm md:text-md xl:text-lg border-b-[0.5px] border-green-900  ">
                     <p className="flex items-center">
                       Peak Season Surcharge
                       <Tooltip
@@ -261,7 +261,7 @@ const PaymentCalculator = () => {
                 <div className="space-y-5 md:space-y-0 pb- md:pb-0">
                   {/* Loss Coverage */}
                   <div className="w-full flex lg:items-center  lg:justify-between md:flex-row flex-col gap-2 h-[3.5rem] py-2  md:border-b-[0.5px] border-green-900  ">
-                    <div className="flex items center gap-2 text-sm md:text-md lg:text-xl">
+                    <div className="flex items center gap-2 text-sm md:text-md xl:text-lg">
                       <input
                         type="checkbox"
                         id="show-number-input"
@@ -301,19 +301,19 @@ const PaymentCalculator = () => {
                         type="number"
                         id="number-input"
                         placeholder="Vehicle Value"
-                        className="text-black  text-sm md:text-md lg:text-xl border  border-gray-300 rounded-md  px-2 lg:px-3  w-full  py-1 md:py-0 md:w-40 md:h-10   focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="text-black  text-sm md:text-md  xl:text-lg border  border-gray-300 rounded-md  px-2 lg:px-3  w-full  py-1 md:py-0 md:w-40 md:h-10   focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                       />
                     )}
                   </div>
                   {/* Full Coverage */}
                   <div className="w-full flex lg:items-center  lg:justify-between md:flex-row flex-col gap-2 h-[3.5rem] py-2  md:border-b-[0.5px] border-green-900  ">
-                    <div className="flex items center gap-2 text-sm md:text-md lg:text-xl">
+                    <div className="flex items center gap-2 text-sm md:text-md xl:text-lg">
                       <input
                         type="checkbox"
                         id="show-number-input"
                         checked={isCheckedTwo}
                         onChange={handleCheckboxChangeTwo}
-                        className="mt-1 focus:ring-white focus:border-blue-500 h-4 w-4 lg:h-5 lg:w-5"
+                        className="mt-1 focus:ring-white  focus:border-blue-500 h-4 w-4 lg:h-5 lg:w-5"
                       />
                       <h2 className="flex items-center">
                         Full Coverage (5%){" "}
@@ -338,7 +338,7 @@ const PaymentCalculator = () => {
                         type="number"
                         id="number-input"
                         placeholder="Vehicle Value"
-                        className="text-black  text-sm md:text-md lg:text-xl border  border-gray-300 rounded-md  px-2 lg:px-3  w-full  py-1 md:py-0 md:w-40 md:h-10   focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="text-black  text-sm md:text-md  xl:text-lg border  border-gray-300 rounded-md  px-2 lg:px-3  w-full  py-1 md:py-0 md:w-40 md:h-10   focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                       />
                     )}
                   </div>
@@ -353,7 +353,7 @@ const PaymentCalculator = () => {
                   $3,885 USD
                 </span>
               </h2>
-              <button className="py-3 text-center text-gray-800 font-bold mt-5 w-full rounded-full bg-orange-400 hover:bg-orange-300 transition-colors duration-300">
+              <button className="py-3 text-sm md:text-md xl:text-lg text-center text-gray-800 font-bold mt-5 w-full rounded-full bg-orange-400 hover:bg-orange-300 transition-colors duration-300">
                 ORDER SHIPPING
               </button>
 

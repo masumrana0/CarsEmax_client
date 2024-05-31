@@ -84,7 +84,7 @@ const NavBottomPart = () => {
         </div>
 
         {/* Vehicle history */}
-        <div className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300 md:hidden lg:block">
+        <div className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300 md:hidden xl:block">
           <Link href={"/"}>Vehicle History</Link>
         </div>
 
@@ -107,7 +107,7 @@ const NavBottomPart = () => {
         </div>
 
         {/* Car in Stock */}
-        <div className="group text-orange-300 hover:text-white transition-colors duration-200 ml-2 md:hidden lg:block">
+        <div className="group text-orange-300 hover:text-white transition-colors duration-200 ml-2 md:hidden xl:block">
           <Link href={"/"}>
             Cars in Stock{" "}
             <span className="group-hover:bg-white px-1 rounded-full bg-orange-300 text-black ">
@@ -120,10 +120,10 @@ const NavBottomPart = () => {
         <div
           onMouseEnter={() => setOpenM(true)}
           onMouseLeave={() => setOpenM(false)}
-          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300 md:block lg:hidden  relative"
+          className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300 md:block xl:hidden  relative"
         >
           <button
-            onMouseEnter={() => setOpenSS(true)}
+            onMouseEnter={() => setOpenM(true)}
             className="flex items-center gap-1"
           >
             More

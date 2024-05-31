@@ -55,7 +55,7 @@ const BreakdownVehicle = () => {
 
   return (
     <div className="w-full flex items-center lg:flex-row flex-col gap-5 lg:py-20 overflow-hidden">
-      <section className="lg:w-1/2 w-full lg:pl-[5rem]   ">
+      <section className="lg:w-1/2 w-full lg:pl-[5rem] md:px-5  ">
         <h2 className="font-bold text-gray-600 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center lg:text-left ">
           Get a Full-price Breakdown For Your Vehicle
         </h2>
@@ -65,7 +65,7 @@ const BreakdownVehicle = () => {
         </p>
 
         <form className="lg:w-[80%] w-full mt-6 p-2">
-          <div className=" flex items-center my-2 gap-4    ">
+          <div className=" flex items-center md:flex-nowrap flex-wrap my-2 gap-4    ">
             <div className="lg:w-1/2 w-full">
               <input
                 type="text"

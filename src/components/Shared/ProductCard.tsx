@@ -50,14 +50,14 @@ const ProductCard: React.FC<{ product: IProduct; isClean?: boolean }> = ({
         <div className="flex items-center gap-2 mt-2">
           <button className="text-white bg-blue-600 hover:bg-blue-400 flex-grow py-1">
             Bid Now
-            <span className="block font-bold text-lg">
+            <span className="block font-bold text-md">
               {product.finalBidAtAuction} USD
             </span>
           </button>
           {!isClean && (
             <button className="text-white bg-green-700 hover:bg-green-600 flex-grow py-1">
               Buy It Now
-              <span className="block font-bold text-lg">
+              <span className="block font-bold text-md">
                 {product.finalBidAtAuction} USD
               </span>
             </button>

@@ -1,5 +1,5 @@
+"use client";
 import React, { useState } from "react";
-import PopularMakesItemFV from "../Navbar/ui/PopularMakesItemFV";
 import PopularMakes from "./PopularMakes";
 import FeaturedItems from "./FeaturedItems";
 import VehicleTypes from "./VehicleTypes";

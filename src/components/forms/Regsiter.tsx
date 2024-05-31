@@ -133,11 +133,11 @@ const Regsiter = () => {
   const [isOpen, setOpen] = useState<boolean>(false);
 
   return (
-    <div className="py-3 px-5 bg-white">
+    <div className="py-3  md:py-10 px-5 md:px-10  bg-white rounded-xl">
       <h3 className="text-2xl text-center ">Register New Account for Free!</h3>
       {/* Login with google apple faebook */}
       <div className="flex  justify-center items-center gap-3 mt-5">
-        <button className="border border-blue-600 shadow-lg flex items-center py-2 px-2 gap-2 rounded-full w-[8rem] group hover:bg-blue-600 transition-colors duration-300 ">
+        <button className="border border-blue-600 shadow-lg flex items-center py-2 px-2 md:px-2 gap-1 md:gap-2 rounded-full w-[8rem] group hover:bg-blue-600 transition-colors duration-300 ">
           <Image
             className="bg-white rounded p-0.5"
             src={google}
@@ -145,11 +145,12 @@ const Regsiter = () => {
             height={20}
             alt="google icon"
           />
-          <span className="text-blue-600  text-sm   group-hover:text-white font-semibold">
+          <span className="text-blue-600 text-xs md:text-sm   group-hover:text-white font-semibold">
             Google
           </span>
         </button>
-        <button className="border border-blue-600 shadow-lg flex items-center py-2 px-2 gap-2 rounded-full w-[8rem] group hover:bg-blue-600 transition-colors duration-300 ">
+
+        <button className="border border-blue-600 shadow-lg flex items-center py-2 px-2 md:px-2 gap-1 md:gap-2 rounded-full w-[9rem] group hover:bg-blue-600 transition-colors duration-300 ">
           <Image
             className="bg-white rounded p-0.5"
             src={apple}
@@ -157,11 +158,11 @@ const Regsiter = () => {
             height={20}
             alt="google icon"
           />
-          <span className="text-blue-600  text-sm   group-hover:text-white font-semibold">
+          <span className="text-blue-600  text-xs md:text-sm   group-hover:text-white font-semibold">
             Apple
           </span>
         </button>
-        <button className="border border-blue-600 shadow-lg flex items-center py-2 px-2 gap-2 rounded-full w-[8rem] group hover:bg-blue-600 transition-colors duration-300 ">
+        <button className="border border-blue-600 shadow-lg flex items-center py-2 px-1 md:px-2 gap-1 md:gap-2 rounded-full w-[9rem] group hover:bg-blue-600 transition-colors duration-300 ">
           <Image
             className="bg-white rounded p-0.5"
             src={facebook}
@@ -169,7 +170,7 @@ const Regsiter = () => {
             height={20}
             alt="google icon"
           />
-          <span className="text-blue-600  text-sm l  group-hover:text-white font-semibold">
+          <span className="text-blue-600  text-xs md:text-sm group-hover:text-white font-semibold">
             Facebook
           </span>
         </button>
@@ -183,13 +184,13 @@ const Regsiter = () => {
       </div>
 
       {/* Registration from  */}
-      <form>
+      <form className=" text-xs sm:text-sm md:text-md">
         <h3 className="text-sm text-gray-600 mt-2">
           * Indicates required fields
         </h3>
 
-        {/* name input */}
-        <div className="w-full flex items-center my-2 gap-5  ">
+        {/* name inputs */}
+        <div className="w-full flex md:flex-row flex-col items-center my-2 md:gap-5 gap-2  ">
           <input
             type="text"
             placeholder="First Name *"
@@ -212,22 +213,22 @@ const Regsiter = () => {
             <button
               type="button"
               onClick={() => setOpen(!isOpen)}
-              className="flex items-center gap-1 border p-2 bg-gray-50"
+              className="flex items-center border w-1/2 md:w-1/3 gap-1 py-2 px-1 bg-gray-50"
             >
               <Image
                 src={selectedCountry.flag}
-                width={30}
-                height={30}
+                width={20}
+                height={20}
                 alt="country flag"
               />
-              <span className="flex items-center gap-1 text-sm">
+              <span className="flex items-center gap-1 text-xs">
                 {selectedCountry.dialCode}
                 <AiFillCaretDown />
               </span>
             </button>
             <input
               type="text"
-              className="outline-none rounded  p-2 flex-grow"
+              className="outline-none rounded w-full  p-2 flex-grow"
               placeholder="Phone number"
             />
           </div>
