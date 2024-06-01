@@ -12,8 +12,8 @@ const NavSearchBar = () => {
   const [isOpen, setOpen] = useState(false);
   const [dropdownContent, setDropdownContent] = useState("All");
 
-  const handleSearch = (e) => {
-    console.log(e);
+  const handleSearch = (e:any) => {
+    // console.log(e);
   };
 
   return (

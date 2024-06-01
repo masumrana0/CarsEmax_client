@@ -1,6 +1,4 @@
-import { IName } from "@/types/auth";
-
-const FullName = (name: IName): string => {
+const FullName = (name: any): string => {
   if (name?.firstName && name?.lastName) {
     return `${name?.firstName} ${" "} ${name?.lastName}`;
   } else {
