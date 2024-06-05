@@ -11,13 +11,11 @@ const ProductCard: React.FC<{ product: IProduct; isClean?: boolean }> = ({
 }) => {
   const [isFevorite, setFevorite] = useState(false);
   return (
-    <div className="border-2 rounded w-[315px] md:[350px] lg:w-[19%] overflow-hidden hover:border-blue-500 hover:shadow-lg p-1 flex-shrink-0">
+    <div className="border-2 rounded w-[315px] md:[350px] lg:w-[380px] xl:w-[400px] overflow-hidden hover:border-blue-500 hover:shadow-lg p-1 flex-shrink-0">
       {/* img section */}
       <div className="relative">
         <Image
-          src={
-            "https://cs.copart.com/v1/AUTH_svc.pdoc00001/lpp/0324/a6473746fcfe4d63a17ab218fe953833_ful.jpg"
-          }
+          src={product.pictures[0]}
           className="h-[70%] w-full"
           width={400}
           height={400}

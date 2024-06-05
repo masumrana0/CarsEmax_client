@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const VehicleHistory = () => {
   return (
-    <div className="p-5 mt-16 bg-gray-100 rounded-xl ">
+    <div className="p-5   m-5 bg-gray-100 rounded-xl ">
       <div className="flex items-center justify-between">
         <h3 className="flex items-center font-bold text-xl  gap-2">
           Vehicle History{" "}

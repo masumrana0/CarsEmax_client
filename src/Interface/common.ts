@@ -22,5 +22,10 @@ export interface IProduct {
   fuel: string;
   auctionHighlights: string;
   finalBidAtAuction: string;
-  pictures?: string[];
+  pictures: string[];
+}
+
+export interface IQuery {
+  name: string;
+  total: string;
 }

@@ -29,6 +29,7 @@ const PaymentCalculator = () => {
   ) => {
     setIsCheckedOne(event.target.checked);
   };
+  
   const handleCheckboxChangeTwo = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {

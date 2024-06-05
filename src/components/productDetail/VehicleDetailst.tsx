@@ -8,6 +8,7 @@ const VehicleDetails = () => {
   const lotNumberRef = useRef<HTMLSpanElement>(null);
   const [copied, setCopied] = useState(false);
 
+  //   handle Copy Loat Number
   const copyToClipboard = () => {
     if (lotNumberRef.current) {
       // Create a range to select the text
@@ -110,13 +111,14 @@ const VehicleDetails = () => {
           Sourced directly from the auction, not in our inventory
         </p>
       </div>
-      <div className="text-md p-3 ">
+
+      <div className="text-sm p-3 ">
         {/* Lot Number */}
         <div className="w-full flex justify-between border-b border-gray-200 py-2  px-3 ">
           <h4 className="w-1/2">Lot Number:</h4>
           <div className="flex items-center gap-1 w-1/2">
-            <span ref={lotNumberRef}>
-              <h3 className="font-semibold">47703684</h3>
+            <span className="font-semibold" ref={lotNumberRef}>
+              47703684
             </span>
             <Tooltip
               overlayStyle={{ backgroundColor: "white" }}
@@ -132,7 +134,7 @@ const VehicleDetails = () => {
         <div className="w-full flex justify-between border-b border-gray-200 py-2   px-3 ">
           <h4 className="w-1/2">VIN:</h4>
           <div className="flex items-center gap-1 w-1/2">
-            <span ref={lotNumberRef}>
+            <span>
               <h3 className="font-semibold">1FT8W3BT7NE******</h3>
               <button className="px-2 py-1 mt-1 font-[400] border  border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded-full ">
                 Get History Report{" "}

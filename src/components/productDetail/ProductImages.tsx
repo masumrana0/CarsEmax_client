@@ -54,6 +54,7 @@ const ProductImages = ({ productImages }: { productImages: string[] }) => {
             <IoArrowBackSharp className="text-2xl" />
           </button>
         </div>
+        
         <div className="hidden group-hover:block absolute right-0 bottom-1/2 bg-opacity-50 bg-black text-gray-200 py-2 px-4 rounded-full">
           <button onClick={handleComeNextImg}>
             <IoMdArrowForward className="text-2xl" />

@@ -2,7 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
- 
- /* App.css */
+/* App.css */
 
- 
+.transition-color {
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+/* Ant number Slider Customization */
+:where(.css-dev-only-do-not-override-n0gjrg).ant-slider
+  .ant-slider-handle::after {
+  @apply !w-[15px] !h-[15px];
+}
+
+:where(.css-dev-only-do-not-override-n0gjrg).ant-slider-horizontal
+  .ant-slider-rail {
+  @apply !h-[1px] !bg-gray-400;
+}
+
+:where(.css-dev-only-do-not-override-n0gjrg).ant-slider-horizontal
+  .ant-slider-track,
+:where(.css-dev-only-do-not-override-n0gjrg).ant-slider-horizontal
+  .ant-slider-tracks {
+  @apply !h-[2px] !bg-blue-600;
+}
+
+:where(.css-dev-only-do-not-override-n0gjrg).ant-slider-horizontal {
+  padding-block: 8px !important;
+}
+
+/* .swiper-slide {
+  margin: 0 10px !important;
+  flex-basis: content !important;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  display: block;
+} */

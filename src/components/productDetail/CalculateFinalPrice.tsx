@@ -17,6 +17,7 @@ const CalculateFinalPrice = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [isCheckedOne, setIsCheckedOne] = useState(false);
   const [isCheckedTwo, setIsCheckedTwo] = useState(false);
+  const [isTotalLostCoverage, setTotalLostCoverage] = useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCountry(event.target.value);
@@ -27,10 +28,16 @@ const CalculateFinalPrice = () => {
   ) => {
     setIsCheckedOne(event.target.checked);
   };
+
   const handleCheckboxChangeTwo = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setIsCheckedTwo(event.target.checked);
+  };
+  const handleVisibleTotalLostCoverage = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setTotalLostCoverage(event.target.checked);
   };
   return (
     <div className="w-full flex flex-col md:flex-row   border-2 rounded mt-5 overflow-hidden">
@@ -125,16 +132,14 @@ const CalculateFinalPrice = () => {
       </section>
 
       {/* Right Section */}
-      <section className="md:w-[58%] w-full    ">
-        <section
-          className="w-full
-             bg-blue-100  "
-        >
-          <div className="lg:px-5 px-2 pt-2 lg:pt-5">
-            {/* Shiiping INfo */}
-            <div>
+      <section className="md:w-[58%] w-full  overflow-hidden   ">
+        {/* Top Content */}
+        <section className="w-full">
+          <div className="bg-blue-50">
+            <div className="lg:px-5 px-2 pt-2 lg:pt-5">
+              {/* Final Bid AţAuction  */}
               <div className=" w-full flex items-center justify-between text-sm md:text-md   py-2  border-b-[0.5px] border-green-900">
-                <p className=" flex items-center ">
+                <p className="flex items-center gap-2">
                   Final Bid at Auction
                   <Tooltip
                     overlayInnerStyle={{
@@ -146,7 +151,7 @@ const CalculateFinalPrice = () => {
                     }
                     arrow={true}
                   >
-                    <span className="text-gray-300 hover:text-white text-xl lg:text-2xl mt-1">
+                    <span className="text-gray-700   text-lg  md:text-xl ">
                       <IoInformationCircleOutline />
                     </span>
                   </Tooltip>
@@ -157,8 +162,9 @@ const CalculateFinalPrice = () => {
                 </h3>
               </div>
 
+              {/* Copart fees */}
               <div className="w-full flex items-center justify-between text-sm md:text-md   py-2 border-b-[0.5px] border-green-900  ">
-                <p className=" flex items-center">
+                <p className="flex items-center gap-2">
                   Copart Fees
                   <Tooltip
                     overlayInnerStyle={{
@@ -170,7 +176,7 @@ const CalculateFinalPrice = () => {
                     }
                     arrow={true}
                   >
-                    <span className="text-gray-300 hover:text-white text-xl lg:text-2xl mt-1">
+                    <span className="text-gray-700   text-lg  md:text-xl ">
                       <IoInformationCircleOutline />
                     </span>
                   </Tooltip>
@@ -181,8 +187,9 @@ const CalculateFinalPrice = () => {
                 </h3>
               </div>
 
+              {/* CarsEMax Transaction fees */}
               <div className="w-full flex items-center justify-between py-2 text-sm md:text-md   border-b-[0.5px] border-green-900  ">
-                <p className="flex items-center">
+                <p className="flex items-center gap-2">
                   CarsEMax Transaction Fees
                   <Tooltip
                     overlayInnerStyle={{
@@ -194,7 +201,7 @@ const CalculateFinalPrice = () => {
                     }
                     arrow={true}
                   >
-                    <span className="text-gray-300 hover:text-white text-xl lg:text-2xl mt-1">
+                    <span className="text-gray-700   text-lg  md:text-xl ">
                       <IoInformationCircleOutline />
                     </span>
                   </Tooltip>
@@ -204,8 +211,9 @@ const CalculateFinalPrice = () => {
                   <span className="font-bold text-nowrap">$285</span> USD
                 </h3>
               </div>
+
               {/* Unlimited storage  */}
-              <div className="w-full flex lg:items-center  lg:justify-between md:flex-row flex-col gap-2 h-[3.5rem] py-2  md:border-b-[0.5px] border-green-900    ">
+              <div className="w-full flex lg:items-center  lg:justify-between md:flex-row flex-col gap-2   py-2        ">
                 <div className="flex items center gap-2 text-sm md:text-md  ">
                   <input
                     type="checkbox"
@@ -214,7 +222,7 @@ const CalculateFinalPrice = () => {
                     onChange={handleCheckboxChangeOne}
                     className="mt-1 focus:ring-white focus:border-blue-500 h-4 w-4 lg:h-5 lg:w-5"
                   />
-                  <h2 className="flex items-center">
+                  <h2 className="flex items-center gap-2">
                     Unlimited Auction Storage
                     <Tooltip
                       overlayInnerStyle={{
@@ -235,54 +243,54 @@ const CalculateFinalPrice = () => {
                       }
                       arrow={true}
                     >
-                      <span className="text-gray-300 hover:text-white text-xl lg:text-2xl mt-1">
+                      <span className="text-gray-700   text-lg  md:text-xl ">
                         <IoInformationCircleOutline />
                       </span>
                     </Tooltip>
                   </h2>
                 </div>
-                {isCheckedOne ? (
-                  <h2 className="text-sm md:text-md">
-                    <span className="font-bold text-nowrap">$285</span>{" "}
-                    <span>USD</span>
-                  </h2>
-                ) : (
-                  <span>-----</span>
-                )}
+                <div>
+                  {isCheckedOne ? (
+                    <h2 className="text-sm md:text-md">
+                      <span className="font-bold text-nowrap">$285</span>{" "}
+                      <span>USD</span>
+                    </h2>
+                  ) : (
+                    <span>-----</span>
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </section>
 
-        {/* bottom section  */}
-        <section className="w-full p-5   bg-blue-200   text-sm md:text-lg  ">
-          <div>
-            <div className="w-full flex items-center justify-between py-2 text-sm md:text-md   border-b-[0.5px] border-green-900  ">
-              <p className="flex items-center">
-                Shipping Cost
-                <Tooltip
-                  overlayInnerStyle={{
-                    width: "20rem",
-                  }}
-                  placement="bottom"
-                  title={
-                    "Surcharge that applies during times of peak demand. Peak Season Surcharge applied due to high congestion in the ports, drayage cost increase, and equipment shortage. "
-                  }
-                  arrow={true}
-                >
-                  <span className="text-gray-300 hover:text-white text-xl lg:text-2xl mt-1">
-                    <IoInformationCircleOutline />
-                  </span>
-                </Tooltip>
-              </p>
+          <div className="bg-blue-100 pb-32">
+            <div className="lg:px-5 px-2  ">
+              {/* Shipping Cost */}
+              <div className="w-full flex items-center justify-between py-2  text-sm md:text-md   border-b-[0.5px] border-green-900  ">
+                <p className="flex items-center gap-2">
+                  Shipping Cost
+                  <Tooltip
+                    overlayInnerStyle={{
+                      width: "20rem",
+                    }}
+                    placement="bottom"
+                    title={
+                      "Surcharge that applies during times of peak demand. Peak Season Surcharge applied due to high congestion in the ports, drayage cost increase, and equipment shortage. "
+                    }
+                    arrow={true}
+                  >
+                    <span className="text-gray-700   text-lg  md:text-xl    ">
+                      <IoInformationCircleOutline />
+                    </span>
+                  </Tooltip>
+                </p>
+                <h3>
+                  <span className="font-bold text-nowrap">-----</span>
+                </h3>
+              </div>
 
-              <h3>
-                <span className="font-bold text-nowrap">-----</span>
-              </h3>
-            </div>
-            <div className=" ">
               {/* Full Coverage */}
-              <div className="w-full flex lg:items-center   lg:justify-between md:flex-row flex-col gap-2 h-[3.5rem] py-2  md:border-b-[0.5px] border-green-900  ">
+              <div className="w-full flex lg:items-center   lg:justify-between md:flex-row flex-col gap-2   py-2  md:border-b-[0.5px] border-green-900  ">
                 <div className="flex items center gap-2 text-sm md:text-md  ">
                   <input
                     type="checkbox"
@@ -291,7 +299,7 @@ const CalculateFinalPrice = () => {
                     onChange={handleCheckboxChangeTwo}
                     className="mt-1 focus:ring-white  focus:border-blue-500 h-4 w-4 lg:h-5 lg:w-5"
                   />
-                  <h2 className="flex items-center">
+                  <h2 className="flex items-center gap-2">
                     Full Coverage (5%){" "}
                     <Tooltip
                       overlayInnerStyle={{
@@ -303,7 +311,7 @@ const CalculateFinalPrice = () => {
                       }
                       arrow={true}
                     >
-                      <span className="text-gray-300 hover:text-white text-xl lg:text-2xl mt-1">
+                      <span className="text-gray-700   text-lg  md:text-xl ">
                         <IoInformationCircleOutline />
                       </span>
                     </Tooltip>
@@ -317,26 +325,62 @@ const CalculateFinalPrice = () => {
                   <span>-----</span>
                 )}
               </div>
+
+              {/* Total Lost Coverage */}
+              <div className="w-full flex lg:items-center   lg:justify-between md:flex-row flex-col gap-2   py-2  md:border-b-[0.5px] border-green-900  ">
+                <div className="flex items center gap-2 text-sm md:text-md  ">
+                  <input
+                    type="checkbox"
+                    id="show-number-input"
+                    checked={isTotalLostCoverage}
+                    onChange={handleVisibleTotalLostCoverage}
+                    className="mt-1 focus:ring-white  focus:border-blue-500 h-4 w-4 lg:h-5 lg:w-5"
+                  />
+                  <h2 className="flex items-center gap-2">
+                    Total Loss Coverage (1.5%){" "}
+                    <Tooltip
+                      overlayInnerStyle={{
+                        width: "20rem",
+                      }}
+                      placement="bottom"
+                      title={
+                        "Full Coverage means that we will provide you with reimbursement for mechanical damage. Deductible is $500. Reimbursement is provided as credit on AutoBidMaster account and can be used toward the next purchases or services. Not applicable for moisture/weather condition damage. "
+                      }
+                      arrow={true}
+                    >
+                      <span className="  text-xl lg:text-2xl mt-1">
+                        <IoInformationCircleOutline />
+                      </span>
+                    </Tooltip>
+                  </h2>
+                </div>
+                {isTotalLostCoverage && (
+                  <h2 className="text-sm md:text-md">
+                    <span className="font-bold text-nowrap">$385</span> USD
+                  </h2>
+                )}
+              </div>
             </div>
           </div>
+        </section>
 
-          <h2 className="flex items-center justify-between font-semibold ">
+        {/* bottom section  */}
+        <section className="w-full  px-5    bg-blue-200  py-5 text-sm md:text-lg  ">
+          <h2 className="flex items-center justify-between font-semibold  ">
             <span>Total Price</span>{" "}
-            <span className="font-bold text-xl ">$3,885 USD</span>
+            <span className="font-bold text-lg ">$3,885 USD</span>
           </h2>
 
           <div className="my-5 flex items-center gap-5">
-            <button className="flex items-center gap-1 text-xl lg:text-2xl">
+            <button className="flex items-center gap-1 text-xl ">
               <LuPrinter />{" "}
-              <span className="hover:underline text-sm  md:text-lg lg:text-xl">
+              <span className="hover:underline text-sm  md:text-lg  ">
                 Print
               </span>
             </button>
-            <button className="flex items-center gap-1 text-xl lg:text-2xl">
+            <button className="flex items-center gap-1 text-xl  ">
               <FaRegCopy />{" "}
-              <span className="hover:underline text-sm md:text-lg lg:text-xl">
-                Copy
-              </span>
+              <span className="hover:underline text-sm md:text-lg  ">Copy</span>
             </button>
           </div>
         </section>

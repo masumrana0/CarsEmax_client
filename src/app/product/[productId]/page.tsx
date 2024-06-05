@@ -2,12 +2,14 @@
 import { IProduct } from "@/Interface/common";
 import AntBreadcrumb from "@/components/productDetail/Breadcrumb";
 import data from "/car.json";
-import React, { useRef } from "react";
+import React from "react";
 import ProductImages from "@/components/productDetail/ProductImages";
 import VehicleDetailst from "@/components/productDetail/VehicleDetailst";
 import VehicleHistory from "@/components/productDetail/VehicleHistory";
 import BidInformation from "@/components/productDetail/BidInformation";
 import CalculateFinalPrice from "@/components/productDetail/CalculateFinalPrice";
+import SimilarVehicles from "@/components/productDetail/SimilarVehicles";
+import ProductAccordian from "@/components/productDetail/ProductAccordian";
 
 const ProductdetailPage = () => {
   const product: IProduct = data[0];
@@ -23,30 +25,41 @@ const ProductdetailPage = () => {
         </h3>
       </div>
 
-      <div className="grid grid-cols-12 mt-5">
-        <section className="col-span-5  ">
-          <ProductImages productImages={product.pictures as string[]} />
-        </section>
-
-        <section className="col-span-4  py-2 rounded-lg">
-          <section>
-            <VehicleDetailst />
+      <div className="lg:px-10">
+        <div className="grid grid-cols-12 gap-5 mt-5">
+          {/* Product images Section */}
+          <section className=" col-span-12  md:col-span-6 lg:col-span-5  ">
+            <ProductImages productImages={product.pictures as string[]} />
+            <section className="block  lg:hidden">
+              <VehicleDetailst />
+              <VehicleHistory />
+            </section>
           </section>
-          <section>
-            <VehicleHistory />
-          </section>
-        </section>
 
-        <section className="col-span-3  py-2 rounded-lg">
-          <BidInformation />
+          {/* Product details section  */}
+          <section className=" hidden lg:block col-span-4  py-2 rounded-lg">
+            <section>
+              <VehicleDetailst />
+            </section>
+            <section>
+              <VehicleHistory />
+            </section>
+          </section>
+
+          {/* Bid information section  */}
+          <section className=" col-span-12 md:col-span-6 lg:col-span-3  py-2 rounded-lg">
+            <BidInformation />
+          </section>
+        </div>
+
+        <section className="grid grid-cols-12 gap-5 px-10 ">
+          <section className=" col-span-12  lg:col-span-8">
+            <CalculateFinalPrice />
+            {/* <SimilarVehicles /> */}
+            <ProductAccordian />
+          </section>
         </section>
       </div>
-
-      <section className="grid grid-cols-12 gap-5 px-10 ">
-        <section className="col-span-8">
-          <CalculateFinalPrice />
-        </section>
-      </section>
     </div>
   );
 };
