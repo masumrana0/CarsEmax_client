@@ -20,7 +20,10 @@ import { PiSlidersHorizontalBold } from "react-icons/pi";
 import { HiOutlinePlus } from "react-icons/hi";
 import { MdOutlineArrowForwardIos, MdArrowBackIosNew } from "react-icons/md";
 
-const TopQueriesForFilter = () => {
+const TopQueriesForFilter: React.FC<{
+  isUseFilter?: boolean;
+  isUseProductsSection?: boolean;
+}> = ({ isUseFilter = false, isUseProductsSection = false }) => {
   // Redux
   const dispatch = useAppDispatch();
   const isFilterVisible = useAppSelector((state) => state.filterSlice.isFilter);
@@ -37,16 +40,16 @@ const TopQueriesForFilter = () => {
     }
   };
 
-  
-
   return (
-    <div className="flex  lg:flex-row flex-col  lg:items-center   gap-5 bg-gray-50  lg:p-5">
+    <div className="flex w-full  items-center   lg:gap-5 bg-gray-50  lg:p-5  ">
       {/* Visible or invisible filter section */}
       <button
         onClick={() => dispatch(filterToggle())}
-        className={`font-bold text-xl ${
+        className={`font-bold text-sm lg:text-xl ${
           isFilterVisible ? "text-white bg-blue-600" : "text-blue-600"
-        } px-2 py-1.5 border border-blue-600 hidden lg:flex items-center gap-1 rounded-full transition-colors `}
+        } lg:px-2 px-1 py-1.5 border border-blue-600  ${
+          isUseFilter ? "hidden" : "flex"
+        }  items-center gap-1 rounded-full transition-color `}
       >
         <PiSlidersHorizontalBold />
         <span className="text-[17px]">FILTERS</span>
@@ -54,7 +57,7 @@ const TopQueriesForFilter = () => {
       </button>
 
       {/* Queries Swiper */}
-      <div className="relative w-full lg:w-[80%] flex items-center">
+      <div className="relative w-full lg:w-[85%] flex items-center">
         {currentSlide > 0 && (
           <button
             className="mr-2  p-2 text-xl bg-blue-600 text-white rounded-full"

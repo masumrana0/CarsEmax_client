@@ -11,11 +11,11 @@ const FilteredProducts = () => {
   const isFilterVisible = useAppSelector((state) => state.filterSlice.isFilter);
   return (
     <div>
-      <ProductFilterSort />
+      {/* <ProductFilterSort /> */}
 
-      <table className="w-full   table-fixed">
-        {/* Table Header */}
-        <thead>
+      {/* <table className="w-full   table-fixed"> */}
+      {/* Table Header */}
+      {/* <thead>
           <tr className="bg-gray-300">
             <th className="w-1/6 px-4 py-2 text-left border border-gray-300">
               Image
@@ -40,17 +40,17 @@ const FilteredProducts = () => {
         {products.map((product: IProduct, index: number) => (
           <InventoryTableProductCard key={index} product={product} />
         ))}
-      </table>
+      </table> */}
 
-      {/* <div
+      <div
         className={`grid  ${
-          isFilterVisible ? "grid-cols-3" : "grid-cols-4"
-        }   gap-5`}
+          isFilterVisible ? "lg:grid-cols-3" : "lg:grid-cols-4"
+        }   gap-5 grid-cols-1 md:grid-cols-2`}
       >
         {products.map((product: IProduct, index: number) => (
           <InventoryProductCard key={index} product={product} />
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };

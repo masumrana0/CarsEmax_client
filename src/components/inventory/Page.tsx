@@ -23,10 +23,14 @@ const InventoryPageMainComponent: React.FC = () => {
       <InventoryHeadSection />
 
       {/* Produdct Filter Components */}
-      <div className="lg:grid lg:grid-cols-12  lg:gap-10 lg:static   fixed  top-0  z-50 w-full  ">
+      <div
+        className={`lg:grid lg:grid-cols-12  lg:gap-10  w-full   ${
+          isFilterVisible && "fixed lg:static"
+        }    top-0  z-50 `}
+      >
         {/* Page Left Section / Filtering Essentials */}
         <section
-          className={`col-span-3 space-y-7 bg-[#e6ecfd] shadow-lg   rounded-lg transition-opacity duration-300 ${
+          className={`col-span-3 space-y-7 bg-[#e6ecfd] shadow-lg   rounded-lg transition-opacity  duration-300 ${
             isFilterVisible
               ? "opacity-100 visible"
               : "opacity-0 invisible hidden"
@@ -38,8 +42,8 @@ const InventoryPageMainComponent: React.FC = () => {
         {/* Page Right Section / Shwoing all Filtered Products */}
         <section
           className={`${
-            isFilterVisible ? "lg:col-span-9" : "lg:col-span-12 p-4"
-          }  space-y-7  rounded-lg hidden lg:block`}
+            isFilterVisible ? "lg:col-span-9 flex" : "lg:col-span-12 p-4"
+          }  space-y-7  rounded-lg col-span-12  `}
         >
           <TopQuriesForFilter />
           <FilteredProducts />

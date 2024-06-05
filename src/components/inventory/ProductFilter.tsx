@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 // All Filter Components
 import AuctionsForFilter from "./AuctionsForFilter";
@@ -51,6 +52,7 @@ const ProductFilter = () => {
           </button>
         </div>
       </div>
+
       {/* It's Section For only Mobile or Tablet Divice  */}
       <div className="fixed bottom-0 p-3 bg-white shadow-2xl shadow-gray-500 w-full text-sm sm:text-md    lg:hidden">
         <button className="font-bold px-3 w-full bg-blue-600 text-white py-2 rounded-full hover:bg-blue-400    ">
@@ -64,11 +66,9 @@ const ProductFilter = () => {
         </h3>
 
         <div className="w-full lg:hidden">
-          <TopQueriesForFilter />
+          <TopQueriesForFilter isUseFilter={true} />
         </div>
       </div>
-
-
 
       {/* Fintering Functionlites Section  */}
       <div className="px-3  sm:px-8 sm:pb-8 mb-52 h-[100vh] lg:h-auto overflow-y-auto lg:overflow-hidden">
