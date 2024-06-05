@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 // icons
 import { IoMdArrowDropdown } from "react-icons/io";
@@ -5,13 +6,22 @@ import { GoSortAsc, GoSortDesc } from "react-icons/go";
 import { BiGridAlt } from "react-icons/bi";
 import { CiMenuBurger } from "react-icons/ci";
 import { GiCheckMark } from "react-icons/gi";
+import { useAppDispatch, useAppSelector } from "@/Redux/hooks";
+import { productCardToggle } from "@/Redux/Slices/FilterSlice";
 
 const ProductFilterSort = () => {
   const [isOpenSortQuries, setOpenSortQuries] = useState<boolean>(false);
   const [isAsc, setAscOrDsc] = useState(false);
-  const [isShowTableProductCard, setShowTableProductCard] =
-    useState<boolean>(false);
+
   const [selectedSortedQuery, setSelectQuery] = useState<string>("Sale Date");
+
+  // redux
+  const isShowTableProductCard = useAppSelector(
+    (state) => state.filterSlice.isTableProduct
+  );
+
+  console.log(isShowTableProductCard);
+  const dispatch = useAppDispatch();
 
   const sortQueries = [
     "Sale Date",
@@ -30,21 +40,22 @@ const ProductFilterSort = () => {
   };
 
   return (
-    <div className="bg-slate-100 w-full flex justify-between items-center mb-2 px-1 py-2">
-      <h2>Showing 1 – 30 of 195,207 Listings </h2>
+    <div className="bg-slate-100 w-full flex justify-between items-center mb-2 lg:px-4 py-2 text-xs sm:text-sm ">
+      <h2 className="flex items-center gap-1">
+        <span className="hidden lg:block">Showing 1 – 30 of</span> 195,207
+        Listings{" "}
+      </h2>
 
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-2">
         {/* Sorting Part */}
         <div className="flex items-center">
-          <h2 className="mr-2">Sort by:</h2>
+          <h2 className="mr-2 text-nowrap">Sort by:</h2>
+
           <div
             onMouseLeave={() => setOpenSortQuries(false)}
             className="bg-white flex items-center gap-2 border px-2 py-1.5 relative"
           >
-            <button
-              //   onBlur={() => setOpenSortQuries(false)}
-              onClick={() => setOpenSortQuries(!isOpenSortQuries)}
-            >
+            <button onClick={() => setOpenSortQuries(!isOpenSortQuries)}>
               {selectedSortedQuery}
             </button>
             <IoMdArrowDropdown />
@@ -72,9 +83,10 @@ const ProductFilterSort = () => {
               ))}
             </div>
           </div>
+
           <button
             onClick={handleSortAscOrDsc}
-            className="text-4xl text-gray-500"
+            className=" text-2xl lg:text-4xl text-gray-500"
           >
             {isAsc ? <GoSortAsc /> : <GoSortDesc />}
           </button>
@@ -84,25 +96,38 @@ const ProductFilterSort = () => {
         <div
           className={`${
             !isShowTableProductCard ? "bg-blue-200" : "bg-white"
-          } p-3 flex items-center justify-center rounded transition-color`}
+          } p-2 hidden lg:flex items-center justify-center rounded transition-color  `}
         >
           <button
-            onClick={() => setShowTableProductCard(false)}
-            className="text-xl text-blue-600"
+            onClick={() => dispatch(productCardToggle())}
+            className="lg:text-xl   text-blue-600"
           >
             <BiGridAlt />
           </button>
         </div>
+
         <div
           className={`${
             isShowTableProductCard ? "bg-blue-200" : "bg-white"
-          } p-3 rounded transition-color flex items-center justify-center`}
+          } p-2 rounded transition-color hidden lg:flex items-center justify-center `}
         >
           <button
-            onClick={() => setShowTableProductCard(true)}
-            className="text-xl text-gray-600"
+            onClick={() => dispatch(productCardToggle())}
+            className="lg:text-xl text-gray-600"
           >
             <CiMenuBurger />
+          </button>
+        </div>
+
+        {/* it's for only  mobile and tablet   */}
+        <div
+          className={`bg-blue-200  p-2 rounded transition-color lg:hidden flex items-center justify-center `}
+        >
+          <button
+            onClick={() => dispatch(productCardToggle(null))}
+            className="lg:text-xl text-blue-600"
+          >
+            {isShowTableProductCard ? <BiGridAlt /> : <CiMenuBurger />}
           </button>
         </div>
       </div>

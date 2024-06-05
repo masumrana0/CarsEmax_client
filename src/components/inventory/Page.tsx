@@ -13,6 +13,7 @@ import TopQuriesForFilter from "./topQuriesForFilter/TopQuriesForFilter";
 import FilteredProducts from "./FilteredProducts";
 import InventoryHeadSection from "./InventoryHeadSection";
 import { useAppSelector } from "@/Redux/hooks";
+import ProductFilterSort from "./ProductFilterSort";
 
 const InventoryPageMainComponent: React.FC = () => {
   // Redux use for Access State
@@ -42,10 +43,11 @@ const InventoryPageMainComponent: React.FC = () => {
         {/* Page Right Section / Shwoing all Filtered Products */}
         <section
           className={`${
-            isFilterVisible ? "lg:col-span-9 flex" : "lg:col-span-12 p-4"
-          }  space-y-7  rounded-lg col-span-12  `}
+            isFilterVisible ? "lg:col-span-9  " : "lg:col-span-12 p-4"
+          }  space-y-7  rounded-lg col-span-12  overflow-hidden `}
         >
           <TopQuriesForFilter />
+          <ProductFilterSort />
           <FilteredProducts />
         </section>
       </div>

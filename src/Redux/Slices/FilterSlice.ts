@@ -3,10 +3,12 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface IInitialState {
   isFilter: boolean;
+  isTableProduct: boolean;
 }
 
 const initialState: IInitialState = {
   isFilter: true,
+  isTableProduct: false,
 };
 
 export const filterSlice = createSlice({
@@ -16,8 +18,11 @@ export const filterSlice = createSlice({
     filterToggle: (state) => {
       state.isFilter = !state.isFilter;
     },
+    productCardToggle: (state) => {
+      state.isTableProduct = !state.isTableProduct;
+    },
   },
 });
 
-export const { filterToggle } = filterSlice.actions;
+export const { filterToggle, productCardToggle } = filterSlice.actions;
 export default filterSlice.reducer;
