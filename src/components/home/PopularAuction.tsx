@@ -36,7 +36,7 @@ const PopularAuction = () => {
         <ProductSwiper isClean={isClean} />
       </div>
       <div className="flex justify-center my-10">
-        <Link href={"/"}>
+        <Link href={"/inventory"}>
           <button className="font-bold text-lg   px-10 py-3 hover:bg-blue-600 hover:text-white tracking-tighter transition-colors duration-300 border border-blue-500 text-blue-600 rounded-full">
             VIEW INVENTORY
           </button>

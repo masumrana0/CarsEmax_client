@@ -51,45 +51,47 @@ const QuickViewModal: React.FC = () => {
         </button>
       </div>
 
-      <div>
+      <div className="">
         {/* Head Buttons */}
         <div className="bg-gray-100 px-4  py-3 ">
-          <div className="flex items-center justify-between">
-            <h2 className="font-bold text-3xl ">0 Reifensatz</h2>
-            <div className="flex items-center">
-              <button className="text-blue-600 flex items-center gap-2  bg-white hover:bg-gray-100 transition-color px-4 py-3.5 rounded-s-full text-xl text-nowrap  border hover:border-blue-600 ">
-                <FaRegHeart size={20} /> Watch
+          <div className="hidden  md:flex items-center justify-between ">
+            <h2 className="font-bold text-xl lg:text-3xl ">0 Reifensatz</h2>
+
+            <div className="flex items-center ">
+              <button className="text-blue-600 flex items-center gap-2  bg-white hover:bg-gray-100 transition-color lg:px-4 px-3  lg:py-3.5 py-2 rounded-s-full lg:text-xl text-nowrap  border hover:border-blue-600 ">
+                <FaRegHeart /> Watch
               </button>
               <Link href={"/product/123"}>
-                <button className=" flex items-center gap-2   bg-blue-600 hover:bg-blue-500 transition-color px-4 py-3.5   text-white text-xl text-nowrap  ">
-                  <FaRegEye size={25} /> View Lot Full Details
+                <button className=" flex items-center gap-2   bg-blue-600 hover:bg-blue-500 transition-color px-4 lg:py-3.5 py-2  text-white lg:text-xl text-nowrap  ">
+                  <FaRegEye /> View Lot Full Details
                 </button>
               </Link>
 
-              <button className="text-blue-600 flex items-center gap-2  bg-white hover:bg-gray-100 transition-color px-2 py-3.5   text-xl text-nowrap  border hover:border-blue-600 ">
-                <IoIosArrowRoundBack size={30} /> Prev Lot
+              <button className="text-blue-600 flex items-center gap-2  bg-white hover:bg-gray-100 transition-color px-2 lg:py-3.5 py-2   lg:text-xl text-nowrap  border hover:border-blue-600 ">
+                <IoIosArrowRoundBack /> Prev Lot
               </button>
-              <button className="text-blue-600 flex items-center gap-2  bg-white hover:bg-gray-100 transition-color px-2 py-3.5   text-xl text-nowrap  border hover:border-blue-600 rounded-e-full ">
-                Next Lot <IoIosArrowRoundForward size={30} />
+
+              <button className="text-blue-600 flex items-center gap-2  bg-white hover:bg-gray-100 transition-color px-2  lg:py-3.5 py-2   lg:text-xl text-nowrap  border hover:border-blue-600 rounded-e-full ">
+                Next Lot <IoIosArrowRoundForward />
               </button>
             </div>
           </div>
         </div>
 
-        <div className="w-full grid gap-5 grid-cols-12 p-5">
-          <div className="col-span-8   flex justify-center items-center">
+        <div className="w-full  grid gap-5 grid-cols-12 p-5">
+          <div className="col-span-12   md:col-span-8   flex justify-center items-center">
             <ProductImages
               useForQuickViewModal={true}
               productImages={SelectedProduct?.pictures as string[]}
             />
           </div>
 
-          <div className="col-span-4  overflow-y-auto">
+          <div className="col-span-12  md:col-span-4  hidden sm:block  ">
             <div className="rounded overflow-hidden  ">
               <BidInformation useForQuickViewModal={true} />
             </div>
 
-            <div className="mt-5 p-5 bg-blue-100  text-gray-800  rounded">
+            <div className="mt-5 p-5 bg-blue-100  text-gray-800  rounded ">
               {/* <VehicleHistory /> */}
 
               <div className="mb-5">
