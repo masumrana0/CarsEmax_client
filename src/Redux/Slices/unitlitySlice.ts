@@ -2,22 +2,22 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface IinitialState {
-  post: string;
+  isProductQuickView: boolean;
 }
 
 const initialState: IinitialState = {
-  post: "",
+  isProductQuickView: false,
 };
 
 export const utilitySlice = createSlice({
   name: "utilitySlice",
   initialState,
   reducers: {
-    setPostId: (state, action: PayloadAction<string>) => {
-      state.post = action.payload;
-    },
+    // setProductQuickView: (state) => {
+    //   state.isProductQuickView = !state.isProductQuickView;
+    // },
   },
 });
 
-export const { setPostId } = utilitySlice.actions;
+// export const { setProductQuickView } = utilitySlice.actions;
 export default utilitySlice.reducer;

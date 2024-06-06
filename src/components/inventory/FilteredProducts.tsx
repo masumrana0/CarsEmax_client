@@ -5,6 +5,8 @@ import { IProduct } from "@/Interface/common";
 import InventoryProductCard from "./InventoryProductCard";
 import { useAppSelector } from "@/Redux/hooks";
 import InventoryTableProductCard from "./InventoryTableProductCard";
+import QuickViewModal from "./QuickViewModal";
+ 
 
 const FilteredProducts = () => {
   // redux
@@ -13,6 +15,10 @@ const FilteredProducts = () => {
     (state) => state.filterSlice.isTableProduct
   );
 
+  const isOpenQuickViewModal = useAppSelector(
+    (state) => state.inventorySlice.isProductQuickView
+  );
+  // console.log("is modal open", isOpenQuickViewModal);
   return (
     <div>
       {isShowTableProductCard ? (
@@ -57,7 +63,7 @@ const FilteredProducts = () => {
         </div>
       )}
 
-      
+      <QuickViewModal />
     </div>
   );
 };

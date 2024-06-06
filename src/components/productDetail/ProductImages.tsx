@@ -6,7 +6,10 @@ import { IoMdArrowForward } from "react-icons/io";
 import { HiOutlineZoomIn } from "react-icons/hi";
 import ReactImageMagnify from "react-image-magnify";
 
-const ProductImages = ({ productImages }: { productImages: string[] }) => {
+const ProductImages: React.FC<{
+  productImages: string[];
+  useForQuickViewModal?: boolean;
+}> = ({ productImages, useForQuickViewModal = false }) => {
   const [imgIndex, setImgIndex] = useState(0);
 
   // Handler for going to the next image
@@ -24,29 +27,48 @@ const ProductImages = ({ productImages }: { productImages: string[] }) => {
   return (
     <div className="w-full">
       {/* Main image container */}
-      <div className="rounded-lg h-[20rem] md:h-[30rem] relative group">
-        <ReactImageMagnify
-          {...{
-            smallImage: {
-              alt: "Product Image",
-              isFluidWidth: true,
-              src: productImages[imgIndex],
-            },
-            largeImage: {
-              src: productImages[imgIndex],
-              width: 1200,
-              height: 1800,
-            },
-            enlargedImageContainerStyle: { zIndex: 9 },
-            isHintEnabled: true,
-            hintTextMouse: "Click to Zoom",
-          }}
-        />
+      <div className="rounded-lg h-[20rem] md:h-[38rem] overflow-hidden relative group">
+        {useForQuickViewModal ? (
+          <Image
+            src={productImages[imgIndex]}
+            className="h-full w-full object-fill"
+            width={1000}
+            height={1000}
+            alt="productimg"
+          />
+        ) : (
+          // <ReactImageMagnify
+          //   {...{
+          //     smallImage: {
+          //       alt: "Product Image",
+          //       isFluidWidth: true,
+          //       src: productImages[imgIndex],
+          //     },
+          //     largeImage: {
+          //       src: productImages[imgIndex],
+          //       width: 1200,
+          //       height: 1800,
+          //     },
+          //     enlargedImageContainerStyle: { zIndex: 9 },
+          //     isHintEnabled: true,
+          //     hintTextMouse: "Click to Zoom",
+          //   }}
+          // />
+          // ít's use for Zoomig Image
+          <Image
+            src={productImages[imgIndex]}
+            width={1000}
+            height={1000}
+            alt="productimg"
+          />
+        )}
 
         {/* Zoom hint button */}
-        <div className=" group-hover:hidden absolute top-4 left-5 bg-opacity-50 flex items-center gap-2 bg-black text-gray-200 py-1 px-2 rounded-full">
-          <HiOutlineZoomIn className="text-xl" /> Click image to zoom
-        </div>
+        {!useForQuickViewModal && (
+          <div className=" group-hover:hidden absolute top-4 left-5 bg-opacity-50 flex items-center gap-2 bg-black text-gray-200 py-1 px-2 rounded-full">
+            <HiOutlineZoomIn className="text-xl" /> Click image to zoom
+          </div>
+        )}
 
         {/* Navigation buttons */}
         <div className="hidden group-hover:block absolute left-0 bottom-1/2 bg-opacity-50 bg-black text-gray-200 py-2 px-4 rounded-full">
@@ -54,7 +76,7 @@ const ProductImages = ({ productImages }: { productImages: string[] }) => {
             <IoArrowBackSharp className="text-2xl" />
           </button>
         </div>
-        
+
         <div className="hidden group-hover:block absolute right-0 bottom-1/2 bg-opacity-50 bg-black text-gray-200 py-2 px-4 rounded-full">
           <button onClick={handleComeNextImg}>
             <IoMdArrowForward className="text-2xl" />
@@ -68,7 +90,7 @@ const ProductImages = ({ productImages }: { productImages: string[] }) => {
       </div>
 
       {/* Thumbnails container */}
-      <div className="my-28 flex flex-wrap gap-2 w-full items-center">
+      <div className="  mt-5 flex flex-wrap gap-2 w-full items-center">
         {productImages.map((img, index) => (
           <button
             onClick={() => setImgIndex(index)}

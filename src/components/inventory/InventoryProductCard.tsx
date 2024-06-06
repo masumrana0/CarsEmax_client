@@ -17,12 +17,27 @@ import { IoArrowBackSharp } from "react-icons/io5";
 import { IoMdArrowForward } from "react-icons/io";
 import { FiHeart } from "react-icons/fi";
 import { FaClock, FaHeart, FaMinus, FaPlus } from "react-icons/fa6";
+import QuickViewModal from "./QuickViewModal";
+import { useAppDispatch } from "@/Redux/hooks";
+import {
+  setProductQuickView,
+  setQuickViewProduct,
+} from "@/Redux/Slices/inventorySlice";
 
 const InventoryProductCard: React.FC<{ product: IProduct }> = ({ product }) => {
   const allImgs = product.pictures;
   const swiperRef = useRef<SwiperType | null>(null);
   const [isWhislisted, setWhislist] = useState(false);
   const [isShowDetail, setShowDetail] = useState(false);
+
+  // Redux
+  const dispatch = useAppDispatch();
+
+  // Handle Open Quick VIew Modal
+  const handleOpenQuickViewModal = () => {
+    dispatch(setProductQuickView());
+    dispatch(setQuickViewProduct(product));
+  };
 
   return (
     <div className="w-full max-h-[80rem] border hover:border-blue-600 rounded overflow-hidden">
@@ -37,7 +52,7 @@ const InventoryProductCard: React.FC<{ product: IProduct }> = ({ product }) => {
         >
           {allImgs.map((img, index) => (
             <SwiperSlide key={index}>
-              <div className="w-full border h-[350px] overflow-hidden">
+              <div className="w-full border h-[350px] overflow-hidden group">
                 <Image
                   src={img}
                   className="w-full h-full relative"
@@ -47,6 +62,7 @@ const InventoryProductCard: React.FC<{ product: IProduct }> = ({ product }) => {
                 />
 
                 <div>
+                  {/* it's indicate image total images */}
                   <div className="absolute right-5 bottom-5 text-white text-sm bg-black  bg-opacity-50  px-2 py-0.5     flex items-center justify-center rounded-full">
                     <h2>1/{allImgs.length}</h2>
                   </div>
@@ -57,6 +73,7 @@ const InventoryProductCard: React.FC<{ product: IProduct }> = ({ product }) => {
                     </h2>
                   </div>
 
+                  {/*Whislist */}
                   <div
                     onMouseEnter={() => setWhislist(true)}
                     onMouseLeave={() => setWhislist(false)}
@@ -66,6 +83,16 @@ const InventoryProductCard: React.FC<{ product: IProduct }> = ({ product }) => {
                       {isWhislisted ? <FaHeart /> : <FiHeart />}
                     </h2>
                   </div>
+
+                  {/*  Quick View Button */}
+                  <div>
+                    <button
+                      onClick={handleOpenQuickViewModal}
+                      className=" absolute left-1/2   top-5 text-gray-200 text-md bg-blue-600  bg-opacity-90  px-4 py-1     hidden  group-hover:flex items-center justify-center rounded-full"
+                    >
+                      Quick View
+                    </button>
+                  </div>
                 </div>
                 {/* Navigation buttons */}
                 <div className="absolute left-0 bottom-1/2 bg-opacity-50 bg-black text-gray-200 py-2 px-3 flex items-center justify-center rounded-e-full">
@@ -73,6 +100,7 @@ const InventoryProductCard: React.FC<{ product: IProduct }> = ({ product }) => {
                     <IoArrowBackSharp className="text-lg" />
                   </button>
                 </div>
+
                 <div className="absolute right-0 bottom-1/2 bg-opacity-50 bg-black text-gray-200 py-2 px-3 flex items-center justify-center rounded-s-full">
                   <button onClick={() => swiperRef.current?.slideNext()}>
                     <IoMdArrowForward className="text-lg" />
@@ -93,6 +121,7 @@ const InventoryProductCard: React.FC<{ product: IProduct }> = ({ product }) => {
 
       {/* Producţ details */}
       <div className=" p-5">
+        {/* product title  */}
         <h2 className="font-bold   text-xl xl:text-2xl  text-blue-700">
           {product.title}
         </h2>
@@ -126,6 +155,7 @@ const InventoryProductCard: React.FC<{ product: IProduct }> = ({ product }) => {
           </table>
         </div>
 
+        {/* Collapse information content  */}
         <div
           className={`w-full bg-blue-100 mt-5 rounded transition-all duration-500 overflow-hidden ${
             isShowDetail ? "max-h-[20rem]" : "max-h-[3rem]"
@@ -165,11 +195,15 @@ const InventoryProductCard: React.FC<{ product: IProduct }> = ({ product }) => {
         </div>
       </div>
 
+
+
+
       {/* Bid Now button  */}
       <button className="w-full  text-white  bg-blue-600 hover:bg-blue-500 transition-color py-1">
         <span>Bid Now</span>
         <span className="font-bold text-2xl block">$0 USD</span>
       </button>
+
     </div>
   );
 };

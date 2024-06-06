@@ -10,6 +10,7 @@ import BidInformation from "@/components/productDetail/BidInformation";
 import CalculateFinalPrice from "@/components/productDetail/CalculateFinalPrice";
 import SimilarVehicles from "@/components/productDetail/SimilarVehicles";
 import ProductAccordian from "@/components/productDetail/ProductAccordian";
+import AuctionSaleInformation from "@/components/productDetail/AuctionSaleINformation";
 
 const ProductdetailPage = () => {
   const product: IProduct = data[0];
@@ -49,6 +50,7 @@ const ProductdetailPage = () => {
           {/* Bid information section  */}
           <section className=" col-span-12 md:col-span-6 lg:col-span-3  py-2 rounded-lg">
             <BidInformation />
+            <AuctionSaleInformation />
           </section>
         </div>
 
@@ -56,7 +58,7 @@ const ProductdetailPage = () => {
           <section className=" col-span-12  lg:col-span-8">
             <CalculateFinalPrice />
             {/* <SimilarVehicles /> */}
-            <ProductAccordian />
+            {/* <ProductAccordian /> */}
           </section>
         </section>
       </div>

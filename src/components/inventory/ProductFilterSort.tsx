@@ -20,9 +20,9 @@ const ProductFilterSort = () => {
     (state) => state.filterSlice.isTableProduct
   );
 
-  console.log(isShowTableProductCard);
   const dispatch = useAppDispatch();
 
+  // Sort Quries data
   const sortQueries = [
     "Sale Date",
     "Mileage",

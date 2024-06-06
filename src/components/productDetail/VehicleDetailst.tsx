@@ -3,38 +3,10 @@ import { Tooltip } from "antd";
 import { FaRegCopy } from "react-icons/fa6";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import Link from "next/link";
+import CopyFunctionality from "../Custom/CopyFunctionlity";
 
 const VehicleDetails = () => {
-  const lotNumberRef = useRef<HTMLSpanElement>(null);
-  const [copied, setCopied] = useState(false);
-
-  //   handle Copy Loat Number
-  const copyToClipboard = () => {
-    if (lotNumberRef.current) {
-      // Create a range to select the text
-      const range = document.createRange();
-      range.selectNode(lotNumberRef.current);
-
-      // Select the text
-      window.getSelection()?.removeAllRanges();
-      window.getSelection()?.addRange(range);
-
-      // Copy text to clipboard
-      document.execCommand("copy");
-
-      // Deselect the text
-      window.getSelection()?.removeAllRanges();
-
-      // Set copied state to true to trigger the tooltip
-      setCopied(true);
-
-      // Reset copied state after some time
-      setTimeout(() => {
-        setCopied(false);
-      }, 2000);
-    }
-  };
-
+  // Tooltip Contentś
   const titleCodeTooltContent = (
     <div>
       <b>NY MV-907A Salvage Certificate</b>
@@ -116,18 +88,8 @@ const VehicleDetails = () => {
         {/* Lot Number */}
         <div className="w-full flex justify-between border-b border-gray-200 py-2  px-3 ">
           <h4 className="w-1/2">Lot Number:</h4>
-          <div className="flex items-center gap-1 w-1/2">
-            <span className="font-semibold" ref={lotNumberRef}>
-              47703684
-            </span>
-            <Tooltip
-              overlayStyle={{ backgroundColor: "white" }}
-              title={copied ? "Copied!" : "Copy Lot Number"}
-            >
-              <button className="text-gray-500" onClick={copyToClipboard}>
-                <FaRegCopy />
-              </button>
-            </Tooltip>
+          <div className="w-1/2">
+            <CopyFunctionality content={23948298} />
           </div>
         </div>
         {/* Vin */}
