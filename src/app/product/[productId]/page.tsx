@@ -58,7 +58,7 @@ const ProductdetailPage = () => {
           <section className=" col-span-12  lg:col-span-8">
             <CalculateFinalPrice />
             {/* <SimilarVehicles /> */}
-            {/* <ProductAccordian /> */}
+            <ProductAccordian />
           </section>
         </section>
       </div>

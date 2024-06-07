@@ -31,7 +31,7 @@ const NavBottomPart = () => {
       {/* Left section  */}
       <section className="flex items-center  flex-col md:flex-row  text-left ">
         <div className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300">
-          <Link href={"/"}>How to Buy</Link>
+          <Link href={"/howtobuy"}>How to Buy</Link>
         </div>
         {/* find Vehicale */}
         <div
