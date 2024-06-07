@@ -11,13 +11,17 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-slate-100 overflow-hidden transition-max-height duration-300 ease-in">
+    <div
+      className={`bg-slate-100 overflow-hidden transition-all  duration-500 ease-in-out ${
+        isOpen ? "max-h-[50rem]" : "max-h-[5rem]"
+      }   duration-300 ease-in group `}
+    >
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="h-[5rem] w-full px-5 flex items-center justify-between"
       >
-        <h2 className="font-bold text-md md:text-lg xl:text-xl">{title}</h2>
-        <span>
+        <h2 className="font-bold text-xs sm:text-sm  md:text-lg xl:text-xl">{title}</h2>
+        <span className="group-hover:text-blue-600 transition-color">
           {isOpen ? (
             <FaMinus className="text-2xl" />
           ) : (
@@ -25,7 +29,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
           )}
         </span>
       </button>
-      {isOpen && <div className="px-5">{content}</div>}
+      {isOpen && <div className="px-5 py-5">{content}</div>}
     </div>
   );
 };
@@ -36,7 +40,7 @@ interface IAccordionProps {
 
 const Accordion: React.FC<IAccordionProps> = ({ items }) => {
   return (
-    <div className="my-10 space-y-2">
+    <div className=" my-3  xl:my-5 space-y-2">
       {items.map((item, index) => (
         <AccordionItem key={index} title={item.title} content={item.content} />
       ))}
