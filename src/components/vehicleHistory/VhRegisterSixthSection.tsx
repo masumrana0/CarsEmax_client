@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const VhRegisterSixthSection = () => {
@@ -16,9 +17,11 @@ const VhRegisterSixthSection = () => {
       </h2>
       <p>It&apos;s fast and easy</p>
 
-      <button className="font-bold bg-white lg:text-xl   hover:bg-gray-300 transition-color px-10 py-3 text-blue-600 rounded-full">
-        REGISTER NOW
-      </button>
+      <Link href={"/register"}>
+        <button className="font-bold bg-white lg:text-xl   hover:bg-gray-300 transition-color px-10 py-3 text-blue-600 rounded-full">
+          REGISTER NOW
+        </button>
+      </Link>
     </div>
   );
 };

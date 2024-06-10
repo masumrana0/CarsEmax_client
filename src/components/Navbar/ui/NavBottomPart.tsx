@@ -85,7 +85,7 @@ const NavBottomPart = () => {
 
         {/* Vehicle history */}
         <div className="hover:bg-white hover:text-black px-2 py-1 rounded transition-colors duration-300 md:hidden xl:block">
-          <Link href={"/"}>Vehicle History</Link>
+          <Link href={"/vehiclehistory"}>Vehicle History</Link>
         </div>
 
         {/* Service and Support  */}

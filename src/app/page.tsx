@@ -79,7 +79,15 @@ const HomePage = () => {
 
       {/* Sixth section  */}
       <section className="bg-[#004979]">
-        <section className="mt-20 px-3 md:px-8 lg:px-10">
+        <section className="mt-20 px-3 md:px-8 lg:px-10 ">
+          <div className="text-white text-center pt-20 ">
+            <h2 className="  text-xl lg:text-3xl font-bold mb-2  ">
+              Payment Calculator
+            </h2>
+            <p className=" text-lg md:text-xl lg:text-3xl mt-1 ">
+              Find Out the Final Price for Any Vehicle
+            </p>
+          </div>
           <PaymentCalculator />
         </section>
       </section>
