@@ -17,7 +17,7 @@ const VhRegisterSixthSection = () => {
       </h2>
       <p>It&apos;s fast and easy</p>
 
-      <Link href={"/register"}>
+      <Link href={"/auth/register"}>
         <button className="font-bold bg-white lg:text-xl   hover:bg-gray-300 transition-color px-10 py-3 text-blue-600 rounded-full">
           REGISTER NOW
         </button>

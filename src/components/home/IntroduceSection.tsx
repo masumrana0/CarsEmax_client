@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
 
 // icons
 import { FaRegUser, FaSearch, FaShip } from "react-icons/fa";
 
-import Regsiter from "../forms/Regsiter";
+import Regsiter from "../auth/Regsiter";
 const IntroduceSection = () => {
   return (
     <div

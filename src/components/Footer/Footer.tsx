@@ -112,7 +112,7 @@ const Footer = () => {
             </Link>
             <Link
               className=" text-xs md:text-[14px] hover:underline "
-              href={"/"}
+              href={"/auth/register"}
             >
               Register
             </Link>

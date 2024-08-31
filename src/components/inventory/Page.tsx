@@ -7,7 +7,7 @@
  */
 
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductFilter from "./ProductFilter";
 import TopQuriesForFilter from "./topQuriesForFilter/TopQuriesForFilter";
 import FilteredProducts from "./FilteredProducts";
@@ -16,8 +16,55 @@ import { useAppSelector } from "@/Redux/hooks";
 import ProductFilterSort from "./ProductFilterSort";
 
 const InventoryPageMainComponent: React.FC = () => {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    const fetchCars = async () => {
+      try {
+        const response = await fetch(
+          "https://copart-iaai-api.com/api/v2/get-cars?api_token=cbb592fc92ce94becb1a0dac0f64471c6aa3ca717e83b1c374871b84ee63be50&per_page=20&page=1 ",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            // body: JSON.stringify({
+            //   api_token:
+            //     "cbb592fc92ce94becb1a0dac0f64471c6aa3ca717e83b1c374871b84ee63be50",
+            //   per_page: 20,
+            //   page: 1,
+            // }),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+        setData(data);
+        // setCars(data);
+      } catch (error) {
+        // setError(error);
+      } finally {
+        // setLoading(false);
+      }
+    };
+
+    fetchCars();
+  }, []);
+
+  console.log(data);
+
   // Redux use for Access State
   const isFilterVisible = useAppSelector((state) => state.filterSlice.isFilter);
+
+  // useEffect(() => {
+  //   const getAlllProduct = async () => {
+  //     const data = await getAlldata(null);
+  //     console.log(data);
+  //   };
+  //   getAlllProduct();
+  // }, []);
   return (
     <div className="text-gray-800  ">
       {/* Page Top section  */}

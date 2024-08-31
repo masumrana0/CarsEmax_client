@@ -30,7 +30,7 @@ const HtbSecondSection = () => {
               To start bidding and buying used cars online, you’ll have to
               register with CarEmax.
             </p>
-            <Link href={"/register"}>
+            <Link href={"/auth/register"}>
               <button className="mt-5 font-bold text-lg lg:text-xl bg-orange-400 hover:bg-orange-300 transition-color px-7 py-3 rounded-full text-nowrap">
                 REGISTER NOW
               </button>

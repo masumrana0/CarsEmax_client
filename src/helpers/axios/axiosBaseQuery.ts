@@ -30,22 +30,23 @@ export const axiosBaseQuery =
       });
       return result;
     } catch (axiosError) {
-      let err = axiosError as AxiosError & {
-        statusCode: number;
-        message: string;
-        success: boolean;
-        errorMessages: Array<any>;
-      };
+      console.log(axiosError);
+      // let err = axiosError as AxiosError & {
+      //   statusCode: number;
+      //   message: string;
+      //   success: boolean;
+      //   errorMessages: Array<any>;
+      // };
 
-      const error = {
-        status: err.response?.status || err?.statusCode || 400,
-        data: err.response?.data || err.message,
-        message: err.response?.data || err.message,
-        success: err?.success,
-        errorMessages: err?.errorMessages,
-      };
+      // const error = {
+      //   status: err.response?.status || err?.statusCode || 400,
+      //   data: err.response?.data || err.message,
+      //   message: err.response?.data || err.message,
+      //   success: err?.success,
+      //   errorMessages: err?.errorMessages,
+      // };
       return {
-        error: error,
+        error: axiosError,
       };
     }
   };

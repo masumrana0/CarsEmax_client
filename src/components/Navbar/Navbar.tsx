@@ -58,7 +58,7 @@ const Navbar = () => {
 
           {/* Account  */}
           <section className="md:flex items-center gap-1 lg:gap-5 hidden ">
-            <Link href={"/login"}>
+            <Link href={"/auth/login"}>
               <button className="flex items-center gap-2 hover:bg-blue-500 px-5 py-2 md:text-xs lg:text-lg rounded-full transition-colors duration-300">
                 <span className="p-1.5 bg-[#cdd9fd] text-[#2158f5] rounded-full">
                   <FaUser />

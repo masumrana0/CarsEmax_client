@@ -34,13 +34,13 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   function (response) {
     // console.log(response);
-    const responseObject: any = {
-      // statusCode: response?.data.statusCode,
-      data: response?.data?.data,
-      meta: response?.data?.meta,
-      // success:response?.data?.success,
-    };
-    return responseObject;
+    // const responseObject: any = {
+    //   // statusCode: response?.data.statusCode,
+    //   data: response?.data?.data,
+    //   meta: response?.data?.meta,
+    //   // success:response?.data?.success,
+    // };
+    return response;
   },
 
   async function (error) {
